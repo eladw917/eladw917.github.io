@@ -1,0 +1,6 @@
+title: My Jekyll Site
+description: Just testing Jekyll on GitHub Pages
+theme: minima  # GitHub Pages–supported theme
+# Optional:
+# url: "https://<your-username>.github.io"
+# baseurl: ""  # set if the site is in a subpath
