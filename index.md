@@ -4,18 +4,43 @@ layout: home
 title: Home
 ---
 
-# Elad Weller - Projects
+# Elad Weller
 
-## Featured Projects
+Full-Stack Developer & Software Engineer
 
-### [Print Size Calculator](https://printsizecalculator.com)
-A comprehensive web application for photographers and designers to calculate optimal print sizes, resolutions, and costs.
-**Technologies:** React, TypeScript, Node.js
+## Projects
 
-### [Mimi's Tab Manager](https://chrome.google.com/webstore/detail/mimis-tab-manager)
-A powerful Chrome extension for organizing browser tabs with smart grouping, session management, and productivity features.
-**Technologies:** JavaScript, Chrome Extension APIs
+<div class="projects-grid">
+  <div class="project-card">
+    <div class="project-image">
+      <img src="/assets/images/print-calculator.jpg" alt="Print Size Calculator" onerror="this.src='/assets/images/placeholder.jpg'">
+    </div>
+    <div class="project-content">
+      <h3><a href="/projects/print-size-calculator/">Print Size Calculator</a></h3>
+      <p>Professional tool for photographers and designers to calculate print sizes, resolutions, and costs.</p>
+      <span class="project-tech">React • TypeScript • Node.js</span>
+    </div>
+  </div>
 
-### [Mixpanel Feed Navigator](https://mixpanel-navigator.demo.com)
-An advanced analytics tool that enhances Mixpanel's interface with improved navigation, custom dashboards, and intelligent insights.
-**Technologies:** React, Python, Flask, Mixpanel API
+  <div class="project-card">
+    <div class="project-image">
+      <img src="/assets/images/tab-manager.jpg" alt="Mimi's Tab Manager" onerror="this.src='/assets/images/placeholder.jpg'">
+    </div>
+    <div class="project-content">
+      <h3><a href="/projects/mimis-tab-manager/">Mimi's Tab Manager</a></h3>
+      <p>Chrome extension for organizing browser tabs with smart grouping and session management.</p>
+      <span class="project-tech">JavaScript • Chrome APIs • Webpack</span>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-image">
+      <img src="/assets/images/mixpanel-navigator.jpg" alt="Mixpanel Feed Navigator" onerror="this.src='/assets/images/placeholder.jpg'">
+    </div>
+    <div class="project-content">
+      <h3><a href="/projects/mixpanel-feed-navigator/">Mixpanel Feed Navigator</a></h3>
+      <p>Analytics enhancement tool with custom dashboards and intelligent insights for data professionals.</p>
+      <span class="project-tech">React • Python • Flask • Mixpanel API</span>
+    </div>
+  </div>
+</div>
