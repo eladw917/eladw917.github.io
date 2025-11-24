@@ -4,9 +4,7 @@ layout: home
 title: Home
 ---
 
-# Elad Weller
-
-Full-Stack Developer & Software Engineer
+# Elad Weller - Projects
 
 ## Featured Projects
 
@@ -21,15 +19,3 @@ A powerful Chrome extension for organizing browser tabs with smart grouping, ses
 ### [Mixpanel Feed Navigator](https://mixpanel-navigator.demo.com)
 An advanced analytics tool that enhances Mixpanel's interface with improved navigation, custom dashboards, and intelligent insights.
 **Technologies:** React, Python, Flask, Mixpanel API
-
-## Skills
-
-- **Frontend:** React, Vue.js, TypeScript, HTML5, CSS3
-- **Backend:** Node.js, Python, Express, Django, PostgreSQL
-- **Tools:** Git, Docker, Chrome Extensions, APIs
-
-## Contact
-
-- [GitHub](https://github.com/eladw917)
-- [LinkedIn](https://linkedin.com/in/yourprofile)
-- [Email](mailto:your.email@example.com)
