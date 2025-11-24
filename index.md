@@ -4,11 +4,11 @@ layout: home
 title: Home
 ---
 
-# Elad Weller
+# Elad's Tools
 
-Full-Stack Developer & Software Engineer
+A collection of useful tools and utilities to enhance your workflow
 
-## Projects
+## Tools
 
 <div class="projects-grid">
   <div class="project-card">
@@ -17,8 +17,8 @@ Full-Stack Developer & Software Engineer
     </div>
     <div class="project-content">
       <h3><a href="/projects/print-size-calculator/">Print Size Calculator</a></h3>
-      <p>Professional tool for photographers and designers to calculate print sizes, resolutions, and costs.</p>
-      <span class="project-tech">React • TypeScript • Node.js</span>
+      <p>Calculate optimal print sizes, resolutions, and costs for photographers and designers.</p>
+      <span class="project-tech">Web Tool</span>
     </div>
   </div>
 
@@ -28,8 +28,8 @@ Full-Stack Developer & Software Engineer
     </div>
     <div class="project-content">
       <h3><a href="/projects/mimis-tab-manager/">Mimi's Tab Manager</a></h3>
-      <p>Chrome extension for organizing browser tabs with smart grouping and session management.</p>
-      <span class="project-tech">JavaScript • Chrome APIs • Webpack</span>
+      <p>Chrome extension to organize and manage browser tabs with smart grouping features.</p>
+      <span class="project-tech">Chrome Extension</span>
     </div>
   </div>
 
@@ -39,8 +39,8 @@ Full-Stack Developer & Software Engineer
     </div>
     <div class="project-content">
       <h3><a href="/projects/mixpanel-activity-navigator/">Mixpanel Activity Navigator</a></h3>
-      <p>Navigate Mixpanel activity feeds efficiently - filter events, track properties, and analyze user timelines.</p>
-      <span class="project-tech">JavaScript • Chrome Extension • Mixpanel API</span>
+      <p>Navigate Mixpanel activity feeds efficiently with filtering and timeline features.</p>
+      <span class="project-tech">Chrome Extension</span>
     </div>
   </div>
 </div>

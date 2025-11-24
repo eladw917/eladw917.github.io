@@ -1,11 +1,9 @@
-# Elad Weller - Portfolio
+# Elad's Tools
 
-A clean, minimal portfolio built with Jekyll and hosted on GitHub Pages.
+A collection of useful tools and utilities built with Jekyll and hosted on GitHub Pages.
 
-## Projects
+## Tools
 
-- [Print Size Calculator](https://printsizecalculator.com) - Photography tool
-- [Mimi's Tab Manager](https://chrome.google.com/webstore/detail/mimis-tab-manager) - Chrome extension
-- [Mixpanel Feed Navigator](https://mixpanel-navigator.demo.com) - Analytics tool
-
-Built with Jekyll and hosted on GitHub Pages.
+- [Print Size Calculator](https://printsizecalculator.com) - Photography and print calculation tool
+- [Mimi's Tab Manager](https://chromewebstore.google.com/detail/idobmlmlfkmcjhojkeeihfgiaochcboc) - Chrome tab management extension
+- [Mixpanel Activity Navigator](https://chromewebstore.google.com/detail/njhkifoehgnmgmhlghgjlakohmkfdpan) - Mixpanel analytics enhancement extension
