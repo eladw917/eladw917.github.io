@@ -2,6 +2,9 @@ title: Elad Weller - Portfolio
 description: Full-stack developer and software engineer showcasing innovative projects and technical expertise
 theme: minima  # GitHub Pages–supported theme
 author: Elad Weller
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
 # Optional:
 url: "https://eladw917.github.io"
 baseurl: ""  # set if the site is in a subpath
