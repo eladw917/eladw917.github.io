@@ -10,65 +10,38 @@ Here's a comprehensive showcase of all my projects, from web applications to mob
 
 ## 🌟 Featured Projects
 
-### [E-commerce Platform](project1)
-**Technologies:** React, Node.js, MongoDB, Stripe API  
-**Description:** A full-featured e-commerce platform with user authentication, product management, shopping cart, and payment processing.  
-**GitHub:** [View Code](https://github.com/eladw917/project1)  
-**Live Demo:** [Try it out](https://project1-demo.netlify.app)
+### [Print Size Calculator](printsizecalculator)
+**Technologies:** React, TypeScript, Node.js, Vercel  
+**Description:** A comprehensive web application for photographers and designers to calculate optimal print sizes, resolutions, and costs.  
+**Live Demo:** [printsizecalculator.com](https://printsizecalculator.com)  
+**GitHub:** [View Code](https://github.com/eladw917/print-size-calculator)
 
-### [Task Management App](project2)
-**Technologies:** Vue.js, Firebase, Vuex  
-**Description:** A collaborative task management application with real-time updates, team workspaces, and project tracking.  
-**GitHub:** [View Code](https://github.com/eladw917/project2)  
-**Live Demo:** [Try it out](https://project2-demo.vercel.app)
+### [Mimi's Tab Manager](mimis-tab-manager)
+**Technologies:** JavaScript, Chrome Extension APIs, Webpack  
+**Description:** A powerful Chrome extension for organizing browser tabs with smart grouping, session management, and productivity features.  
+**Chrome Web Store:** [Download Extension](https://chrome.google.com/webstore/detail/mimis-tab-manager/...)  
+**GitHub:** [View Code](https://github.com/eladw917/mimis-tab-manager)
 
-### [Weather Dashboard](project3)
-**Technologies:** React, OpenWeather API, Chart.js  
-**Description:** An interactive weather dashboard with location-based forecasts, historical data visualization, and personalized alerts.  
-**GitHub:** [View Code](https://github.com/eladw917/project3)  
-**Live Demo:** [Try it out](https://weather-dashboard.netlify.app)
+### [Mixpanel Feed Navigator](mixpanel-feed-navigator)
+**Technologies:** React, Python, Flask, Mixpanel API  
+**Description:** An advanced analytics tool that enhances Mixpanel's interface with improved navigation, custom dashboards, and intelligent insights.  
+**Live Demo:** [Try Mixpanel Feed Navigator](https://mixpanel-navigator.demo.com)  
+**GitHub:** [View Code](https://github.com/eladw917/mixpanel-feed-navigator)
 
-## 📱 Mobile & Web Apps
+## 🎯 Project Categories
 
-### [Fitness Tracker Mobile App](project4)
-**Technologies:** React Native, Redux, SQLite  
-**Description:** A comprehensive fitness tracking app with workout plans, progress monitoring, and social features.  
-**GitHub:** [View Code](https://github.com/eladw917/project4)  
-**App Store:** Coming Soon
+### Web Applications
+- **Print Size Calculator** - Photography and design tool for print calculations
+- **Mixpanel Feed Navigator** - Analytics enhancement tool for data professionals
 
-### [Blog CMS](project5)
-**Technologies:** Next.js, Sanity CMS, Vercel  
-**Description:** A modern blog content management system with SEO optimization, markdown support, and analytics.  
-**GitHub:** [View Code](https://github.com/eladw917/project5)  
-**Live Demo:** [Visit Blog](https://my-blog.vercel.app)
+### Browser Extensions
+- **Mimi's Tab Manager** - Productivity extension for Chrome tab management
 
-## 🔧 Developer Tools & APIs
+### Developer Tools
+- Additional tools and utilities coming soon...
 
-### [Code Snippet Manager](project6)
-**Technologies:** Express.js, PostgreSQL, JWT, Docker  
-**Description:** A RESTful API for managing and sharing code snippets with syntax highlighting and version control.  
-**GitHub:** [View Code](https://github.com/eladw917/project6)  
-**API Docs:** [Swagger Docs](https://api-project6.herokuapp.com/docs)
-
-### [GitHub Profile Analyzer](project7)
-**Technologies:** Python, Flask, GitHub API, Pandas  
-**Description:** A web application that analyzes GitHub profiles and provides insights on coding activity, language usage, and contribution patterns.  
-**GitHub:** [View Code](https://github.com/eladw917/project7)  
-**Live Demo:** [Analyze Profile](https://github-analyzer.streamlit.app)
-
-## 🎮 Personal Projects & Experiments
-
-### [2048 Game Clone](project8)
-**Technologies:** Vanilla JavaScript, HTML5 Canvas, CSS3  
-**Description:** A faithful recreation of the popular 2048 puzzle game with smooth animations and responsive design.  
-**GitHub:** [View Code](https://github.com/eladw917/project8)  
-**Live Demo:** [Play Game](https://2048-game.netlify.app)
-
-### [CSS Art Gallery](project9)
-**Technologies:** HTML, CSS, SCSS  
-**Description:** A collection of creative CSS-only art pieces and animations, showcasing advanced CSS techniques.  
-**GitHub:** [View Code](https://github.com/eladw917/project9)  
-**Live Demo:** [View Gallery](https://css-art-gallery.netlify.app)
+### Personal Projects
+- Experimental projects and learning exercises coming soon...
 
 ---
 

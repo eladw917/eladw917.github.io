@@ -51,20 +51,20 @@ title: Home
 <div class="featured-projects">
   <h2>Featured Work</h2>
   <div class="featured-grid">
-    <div class="featured-item">
-      <h3><a href="/projects/project1">E-commerce Platform</a></h3>
-      <p>Full-featured online store with payment processing, user management, and admin dashboard.</p>
-      <span class="tech-stack">React • Node.js • MongoDB • Stripe</span>
-    </div>
-    <div class="featured-item">
-      <h3><a href="/projects/project2">Task Management App</a></h3>
-      <p>Collaborative project management tool with real-time updates and team workspaces.</p>
-      <span class="tech-stack">Vue.js • Firebase • Tailwind CSS</span>
-    </div>
-    <div class="featured-item">
-      <h3><a href="/projects/project3">Weather Dashboard</a></h3>
-      <p>Interactive weather application with location-based forecasts and data visualization.</p>
-      <span class="tech-stack">React • OpenWeather API • Chart.js</span>
-    </div>
+  <div class="featured-item">
+    <h3><a href="/projects/printsizecalculator">Print Size Calculator</a></h3>
+    <p>Professional tool for photographers and designers to calculate print sizes, resolutions, and costs.</p>
+    <span class="tech-stack">React • TypeScript • Node.js</span>
+  </div>
+  <div class="featured-item">
+    <h3><a href="/projects/mimis-tab-manager">Mimi's Tab Manager</a></h3>
+    <p>Chrome extension for organizing browser tabs with smart grouping and session management.</p>
+    <span class="tech-stack">JavaScript • Chrome APIs • Webpack</span>
+  </div>
+  <div class="featured-item">
+    <h3><a href="/projects/mixpanel-feed-navigator">Mixpanel Feed Navigator</a></h3>
+    <p>Analytics enhancement tool with custom dashboards and intelligent insights for data professionals.</p>
+    <span class="tech-stack">React • Python • Flask • Mixpanel API</span>
+  </div>
   </div>
 </div>
