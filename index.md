@@ -4,34 +4,67 @@ layout: home
 title: Home
 ---
 
-# Hi, I'm Elad Weller 👋
+<div class="hero-section">
+  <h1>Elad Weller</h1>
+  <p class="hero-subtitle">Full-Stack Developer & Software Engineer</p>
+  <p class="hero-description">Passionate about creating innovative solutions and building modern web applications. Specialized in full-stack development with expertise in modern technologies and best practices.</p>
+</div>
 
-I'm a passionate full-stack developer with expertise in modern web technologies. I love creating innovative solutions and bringing ideas to life through code.
+<div class="portfolio-sections">
+  <div class="section-card">
+    <div class="section-icon">🚀</div>
+    <h2><a href="/projects/">Projects</a></h2>
+    <p>Explore my portfolio of web applications, mobile apps, APIs, and development tools. Each project includes detailed documentation, technologies used, and live demos.</p>
+  </div>
 
-## 🚀 Featured Projects
+  <div class="section-card">
+    <div class="section-icon">👨‍💻</div>
+    <h2><a href="/about/">About Me</a></h2>
+    <p>Learn about my background, experience, and journey in software development. Understand my approach to problem-solving and passion for technology.</p>
+  </div>
 
-### [Project Name 1](projects/project1)
-*A brief description of your first featured project. What technologies did you use? What problem did it solve?*
+  <div class="section-card">
+    <div class="section-icon">🛠️</div>
+    <h2><a href="/skills/">Skills & Technologies</a></h2>
+    <p>Discover the technologies and tools I work with. From frontend frameworks to backend systems, cloud platforms to development methodologies.</p>
+  </div>
 
-### [Project Name 2](projects/project2)
-*Another amazing project showcasing your skills. Highlight the key features and technologies.*
+  <div class="section-card">
+    <div class="section-icon">📝</div>
+    <h2><a href="/blog/">Blog & Articles</a></h2>
+    <p>Read about my thoughts on technology, development best practices, tutorials, and insights from my experience building software solutions.</p>
+  </div>
 
-### [Project Name 3](projects/project3)
-*Show off your latest work here. Include what makes this project special.*
+  <div class="section-card">
+    <div class="section-icon">🎓</div>
+    <h2><a href="/experience/">Experience</a></h2>
+    <p>Review my professional experience, education, certifications, and career milestones. See how I've contributed to various projects and teams.</p>
+  </div>
 
-## 💻 Skills & Technologies
+  <div class="section-card">
+    <div class="section-icon">📬</div>
+    <h2><a href="/contact/">Contact</a></h2>
+    <p>Get in touch for collaboration opportunities, project inquiries, or just to connect. Find my contact information and social media links.</p>
+  </div>
+</div>
 
-- **Frontend:** React, Vue.js, HTML5, CSS3, JavaScript/TypeScript
-- **Backend:** Node.js, Python, Express, Django, PostgreSQL, MongoDB
-- **Tools:** Git, Docker, AWS, CI/CD, Testing frameworks
-- **Other:** REST APIs, GraphQL, Agile methodologies
-
-## 📫 Get In Touch
-
-- [GitHub](https://github.com/eladw917)
-- [LinkedIn](https://linkedin.com/in/yourprofile)
-- [Email](mailto:your.email@example.com)
-
----
-
-*Check out my [full projects page](projects) for a complete list of all my work.*
+<div class="featured-projects">
+  <h2>Featured Work</h2>
+  <div class="featured-grid">
+    <div class="featured-item">
+      <h3><a href="/projects/project1">E-commerce Platform</a></h3>
+      <p>Full-featured online store with payment processing, user management, and admin dashboard.</p>
+      <span class="tech-stack">React • Node.js • MongoDB • Stripe</span>
+    </div>
+    <div class="featured-item">
+      <h3><a href="/projects/project2">Task Management App</a></h3>
+      <p>Collaborative project management tool with real-time updates and team workspaces.</p>
+      <span class="tech-stack">Vue.js • Firebase • Tailwind CSS</span>
+    </div>
+    <div class="featured-item">
+      <h3><a href="/projects/project3">Weather Dashboard</a></h3>
+      <p>Interactive weather application with location-based forecasts and data visualization.</p>
+      <span class="tech-stack">React • OpenWeather API • Chart.js</span>
+    </div>
+  </div>
+</div>
