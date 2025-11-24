@@ -4,7 +4,7 @@ Add your project images here:
 
 - `print-calculator.jpg` - Image for Print Size Calculator project
 - `tab-manager.jpg` - Image for Mimi's Tab Manager project
-- `mixpanel-navigator.jpg` - Image for Mixpanel Feed Navigator project
+- `mixpanel-navigator.jpg` - Image for Mixpanel Activity Navigator project
 - `placeholder.jpg` - Fallback image if project images are missing
 
 ## Recommended Image Specifications:

@@ -35,12 +35,12 @@ Full-Stack Developer & Software Engineer
 
   <div class="project-card">
     <div class="project-image">
-      <img src="/assets/images/mixpanel-navigator.jpg" alt="Mixpanel Feed Navigator" onerror="this.src='/assets/images/placeholder.jpg'">
+      <img src="/assets/images/mixpanel-navigator.jpg" alt="Mixpanel Activity Navigator" onerror="this.src='/assets/images/placeholder.jpg'">
     </div>
     <div class="project-content">
-      <h3><a href="/projects/mixpanel-feed-navigator/">Mixpanel Feed Navigator</a></h3>
-      <p>Analytics enhancement tool with custom dashboards and intelligent insights for data professionals.</p>
-      <span class="project-tech">React • Python • Flask • Mixpanel API</span>
+      <h3><a href="/projects/mixpanel-activity-navigator/">Mixpanel Activity Navigator</a></h3>
+      <p>Navigate Mixpanel activity feeds efficiently - filter events, track properties, and analyze user timelines.</p>
+      <span class="project-tech">JavaScript • Chrome Extension • Mixpanel API</span>
     </div>
   </div>
 </div>

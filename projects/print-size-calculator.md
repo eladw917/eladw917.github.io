@@ -32,7 +32,7 @@ A comprehensive web application that helps photographers, designers, and print p
 
 ## 🔗 Links
 
-- **[Live Demo](https://printsizecalculator.com)**
+- **[Live Demo](https://printsizecalculator.com/)**
 - **[GitHub Repository](https://github.com/eladw917/print-size-calculator)**
 
 ---

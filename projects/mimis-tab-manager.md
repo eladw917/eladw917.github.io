@@ -34,7 +34,7 @@ A powerful Chrome extension that helps users organize, manage, and optimize thei
 
 ## 🔗 Links
 
-- **[Chrome Web Store](https://chrome.google.com/webstore/detail/mimis-tab-manager)**
+- **[Chrome Web Store](https://chromewebstore.google.com/detail/idobmlmlfkmcjhojkeeihfgiaochcboc?utm_source=item-share-cb)**
 - **[GitHub Repository](https://github.com/eladw917/mimis-tab-manager)**
 
 ---
