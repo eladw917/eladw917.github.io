@@ -1,6 +1,7 @@
-title: My Jekyll Site
-description: Just testing Jekyll on GitHub Pages
+title: Elad Weller - Portfolio
+description: Full-stack developer and software engineer showcasing innovative projects and technical expertise
 theme: minima  # GitHub Pages–supported theme
+author: Elad Weller
 # Optional:
-# url: "https://<your-username>.github.io"
-# baseurl: ""  # set if the site is in a subpath
+url: "https://eladw917.github.io"
+baseurl: ""  # set if the site is in a subpath
