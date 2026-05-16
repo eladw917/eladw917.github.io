@@ -1217,6 +1217,39 @@
         background: repeating-linear-gradient(rgba(255, 255, 255, 0.14) 0 7px, transparent 7px 17px);
       }
 
+      .thumb-haiku {
+        background:
+          radial-gradient(circle at 78% 24%, rgba(255, 255, 255, 0.4), transparent 28%),
+          linear-gradient(135deg, #1b2433, #32425f);
+      }
+
+      .thumb-haiku::before {
+        content: "Haiku";
+        position: absolute;
+        left: 32px;
+        top: 34px;
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: 820;
+        letter-spacing: 0.01em;
+      }
+
+      .thumb-haiku::after {
+        content: "";
+        position: absolute;
+        right: 28px;
+        top: 30px;
+        width: 96px;
+        height: 84px;
+        border-radius: 18px;
+        background:
+          radial-gradient(circle at 24px 20px, rgba(255, 255, 255, 0.88) 0 4px, transparent 5px),
+          radial-gradient(circle at 54px 38px, rgba(255, 255, 255, 0.72) 0 4px, transparent 5px),
+          radial-gradient(circle at 28px 58px, rgba(255, 255, 255, 0.54) 0 4px, transparent 5px),
+          linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
       .contact-pane {
         display: grid;
         grid-template-columns: minmax(0, 0.8fr) minmax(260px, 0.55fr);
@@ -1512,6 +1545,17 @@
                   <h3>Mixpanel Activity Navigator</h3>
                   <p>Filter events, track properties, and move through user timelines faster.</p>
                   <div class="tag-row"><span class="tag">JavaScript</span><span class="tag">Analytics</span><span class="tag">Chrome</span></div>
+                </div>
+              </a>
+            </article>
+            <article class="project-card" data-category="utility" data-title="Haiku Mania" data-year="2026">
+              <a class="project-link" href="https://haiku-mania.pages.dev/" target="_blank" rel="noreferrer">
+                <div class="project-visual thumb-haiku" aria-hidden="true"></div>
+                <div class="project-body">
+                  <span class="category utility">Web Tool</span>
+                  <h3>Haiku Mania</h3>
+                  <p>A playful haiku experiment for creating short poems and quick creative prompts.</p>
+                  <div class="tag-row"><span class="tag">Creative Coding</span><span class="tag">Poetry</span><span class="tag">Experiment</span></div>
                 </div>
               </a>
             </article>
@@ -1915,6 +1959,13 @@
           href: "/projects/mixpanel-activity-navigator/",
           visual: "thumb-mixpanel",
           tags: ["JavaScript", "Analytics", "Chrome"]
+        },
+        {
+          title: "Haiku Mania",
+          description: "A playful haiku experiment for creating short poems and quick creative prompts.",
+          href: "https://haiku-mania.pages.dev/",
+          visual: "thumb-haiku",
+          tags: ["Creative Coding", "Poetry", "Experiment"]
         }
       ];
 
