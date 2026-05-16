@@ -1250,6 +1250,44 @@
         border: 1px solid rgba(255, 255, 255, 0.12);
       }
 
+      .thumb-whatsapp {
+        background:
+          radial-gradient(circle at 25% 22%, rgba(255, 255, 255, 0.26), transparent 28%),
+          linear-gradient(135deg, #1f3b2d, #2f7a4d);
+      }
+
+      .thumb-whatsapp::before,
+      .thumb-whatsapp::after {
+        content: "";
+        position: absolute;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.92);
+      }
+
+      .thumb-whatsapp::before {
+        left: 30px;
+        top: 28px;
+        width: 74px;
+        height: 48px;
+      }
+
+      .thumb-whatsapp::after {
+        right: 28px;
+        top: 52px;
+        width: 84px;
+        height: 40px;
+      }
+
+      .thumb-whatsapp .bubble-tail,
+      .thumb-whatsapp .bubble-tail::before {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        transform: rotate(45deg);
+        background: rgba(255, 255, 255, 0.92);
+      }
+
       .contact-pane {
         display: grid;
         grid-template-columns: minmax(0, 0.8fr) minmax(260px, 0.55fr);
@@ -1526,7 +1564,7 @@
             </article>
 
             <article class="project-card" data-category="extension" data-title="Mimi's Tab Manager" data-year="2025">
-              <a class="project-link" href="/projects/mimis-tab-manager/">
+              <a class="project-link" href="https://chrome.google.com/webstore/devconsole/0a24c3a5-d208-46b9-9c1a-023acbe2f7a5/idobmlmlfkmcjhojkeeihfgiaochcboc/edit" target="_blank" rel="noreferrer">
                 <div class="project-visual thumb-tabs" aria-hidden="true"></div>
                 <div class="project-body">
                   <span class="category design">Extension</span>
@@ -1538,13 +1576,24 @@
             </article>
 
             <article class="project-card" data-category="extension" data-title="Mixpanel Activity Navigator" data-year="2025">
-              <a class="project-link" href="/projects/mixpanel-activity-navigator/">
+              <a class="project-link" href="https://chrome.google.com/webstore/devconsole/0a24c3a5-d208-46b9-9c1a-023acbe2f7a5/njhkifoehgnmgmhlghgjlakohmkfdpan/edit" target="_blank" rel="noreferrer">
                 <div class="project-visual thumb-mixpanel" aria-hidden="true"></div>
                 <div class="project-body">
                   <span class="category">Extension</span>
                   <h3>Mixpanel Activity Navigator</h3>
                   <p>Filter events, track properties, and move through user timelines faster.</p>
                   <div class="tag-row"><span class="tag">JavaScript</span><span class="tag">Analytics</span><span class="tag">Chrome</span></div>
+                </div>
+              </a>
+            </article>
+            <article class="project-card" data-category="extension" data-title="WhatsApp Reply Pal" data-year="2025">
+              <a class="project-link" href="https://chrome.google.com/webstore/devconsole/0a24c3a5-d208-46b9-9c1a-023acbe2f7a5/cmgbeceojeomlhcbljgepcjdjkoohgpe/edit" target="_blank" rel="noreferrer">
+                <div class="project-visual thumb-whatsapp" aria-hidden="true"></div>
+                <div class="project-body">
+                  <span class="category design">Extension</span>
+                  <h3>WhatsApp Reply Pal</h3>
+                  <p>A Chrome extension for drafting and managing quick WhatsApp replies.</p>
+                  <div class="tag-row"><span class="tag">Chrome</span><span class="tag">Messaging</span><span class="tag">Productivity</span></div>
                 </div>
               </a>
             </article>
@@ -1949,16 +1998,23 @@
         {
           title: "Mimi's Tab Manager",
           description: "A Chrome extension for organizing browser tabs with grouping, sessions, search, and cleanup flows.",
-          href: "/projects/mimis-tab-manager/",
+          href: "https://chrome.google.com/webstore/devconsole/0a24c3a5-d208-46b9-9c1a-023acbe2f7a5/idobmlmlfkmcjhojkeeihfgiaochcboc/edit",
           visual: "thumb-tabs",
           tags: ["Chrome", "Tabs API", "Productivity"]
         },
         {
           title: "Mixpanel Activity Navigator",
           description: "A browser extension that helps teams filter events, track properties, and move through Mixpanel user timelines faster.",
-          href: "/projects/mixpanel-activity-navigator/",
+          href: "https://chrome.google.com/webstore/devconsole/0a24c3a5-d208-46b9-9c1a-023acbe2f7a5/njhkifoehgnmgmhlghgjlakohmkfdpan/edit",
           visual: "thumb-mixpanel",
           tags: ["JavaScript", "Analytics", "Chrome"]
+        },
+        {
+          title: "WhatsApp Reply Pal",
+          description: "A Chrome extension for drafting and managing quick WhatsApp replies.",
+          href: "https://chrome.google.com/webstore/devconsole/0a24c3a5-d208-46b9-9c1a-023acbe2f7a5/cmgbeceojeomlhcbljgepcjdjkoohgpe/edit",
+          visual: "thumb-whatsapp",
+          tags: ["Chrome", "Messaging", "Productivity"]
         },
         {
           title: "Haiku Mania",
