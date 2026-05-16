@@ -1090,6 +1090,36 @@
         box-shadow: 0 18px 34px rgba(66, 133, 244, 0.2);
       }
 
+      .thumb-mixpanel {
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, #f8fbff, #e8f0fe);
+      }
+
+      .thumb-mixpanel::before {
+        content: "";
+        width: 60px;
+        height: 60px;
+        border-radius: 14px;
+        background: url("https://lh3.googleusercontent.com/koHvqChjS0EYW3ItAAHIP34l02mjLTiWBr0zdAMut47sBeBPnIlf30LBjoyhYiqCdNqrjpkJQkqz62yIJBEIXS_N8Q=s60") center / contain no-repeat;
+        box-shadow: 0 18px 34px rgba(66, 133, 244, 0.2);
+      }
+
+      .thumb-whatsapp {
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, #f8fbff, #e8f0fe);
+      }
+
+      .thumb-whatsapp::before {
+        content: "";
+        width: 60px;
+        height: 60px;
+        border-radius: 14px;
+        background: url("https://lh3.googleusercontent.com/fXEA1db4AC-ErT363QBjESb54TizXTdRa8vPz75fr2LgATNeqHvtcoixLTn7CVXt_wXb9soIbRdomI52iHLTWkINcg=s60") center / contain no-repeat;
+        box-shadow: 0 18px 34px rgba(66, 133, 244, 0.2);
+      }
+
       .thumb-haiku {
         background:
           linear-gradient(rgba(7, 17, 31, 0.08), rgba(7, 17, 31, 0.08)),
@@ -1358,7 +1388,7 @@
 
             <article class="project-card" data-category="extension" data-title="Mixpanel Activity Navigator" data-year="2025">
               <a class="project-link" href="https://chromewebstore.google.com/detail/mixpanel-activity-navigat/njhkifoehgnmgmhlghgjlakohmkfdpan?authuser=0&hl=en-GB" target="_blank" rel="noreferrer">
-                <div class="project-visual thumb-store" aria-hidden="true"></div>
+                <div class="project-visual thumb-mixpanel" aria-hidden="true"></div>
                 <div class="project-body">
                   <span class="category">Extension</span>
                   <h3>Mixpanel Activity Navigator</h3>
@@ -1369,7 +1399,7 @@
             </article>
             <article class="project-card" data-category="extension" data-title="WhatsApp Reply Pal" data-year="2025">
               <a class="project-link" href="https://chromewebstore.google.com/detail/whatsapp-replypal/cmgbeceojeomlhcbljgepcjdjkoohgpe?authuser=0&hl=en-GB" target="_blank" rel="noreferrer">
-                <div class="project-visual thumb-store" aria-hidden="true"></div>
+                <div class="project-visual thumb-whatsapp" aria-hidden="true"></div>
                 <div class="project-body">
                   <span class="category design">Extension</span>
                   <h3>WhatsApp Reply Pal</h3>
@@ -1776,14 +1806,14 @@
           title: "Mixpanel Activity Navigator",
           description: "A browser extension that helps teams filter events, track properties, and move through Mixpanel user timelines faster.",
           href: "https://chromewebstore.google.com/detail/mixpanel-activity-navigat/njhkifoehgnmgmhlghgjlakohmkfdpan?authuser=0&hl=en-GB",
-          visual: "thumb-store",
+          visual: "thumb-mixpanel",
           tags: ["JavaScript", "Analytics", "Chrome"]
         },
         {
           title: "WhatsApp Reply Pal",
           description: "A Chrome extension for drafting and managing quick WhatsApp replies.",
           href: "https://chromewebstore.google.com/detail/whatsapp-replypal/cmgbeceojeomlhcbljgepcjdjkoohgpe?authuser=0&hl=en-GB",
-          visual: "thumb-store",
+          visual: "thumb-whatsapp",
           tags: ["Chrome", "Messaging", "Productivity"]
         },
         {
