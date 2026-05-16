@@ -532,26 +532,41 @@
       }
 
       .skill-group {
-        padding: 10px 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 12px 14px 14px;
         border: 1px solid var(--line);
         border-radius: 8px;
         background: var(--surface-soft);
       }
 
       .skill-group-category {
-        display: block;
-        margin-bottom: 5px;
+        display: inline-flex;
+        width: fit-content;
+        align-items: center;
+        padding: 4px 8px;
+        border-radius: 999px;
+        background: #eaf1ff;
         color: var(--blue);
         font-size: 11px;
         font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.02em;
+        text-transform: capitalize;
+        letter-spacing: 0.01em;
       }
 
       .skill-group strong {
         display: block;
-        font-size: 14px;
-        line-height: 1.35;
+        font-size: 15px;
+        line-height: 1.3;
+      }
+
+      .skill-group-note {
+        min-height: 34px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.45;
       }
 
       .education-list {
@@ -644,85 +659,6 @@
         color: var(--muted);
         font-size: clamp(18px, 2.2vw, 22px);
         line-height: 1.55;
-      }
-
-      .profile-strip {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        margin-top: 34px;
-        text-align: left;
-      }
-
-      .avatar {
-        width: 94px;
-        aspect-ratio: 1;
-        border-radius: 50%;
-        overflow: hidden;
-        flex: 0 0 auto;
-        background:
-          radial-gradient(circle at 58% 34%, #f0c8ab 0 18%, transparent 19%),
-          linear-gradient(135deg, #d9e7f7, #eef5ff);
-        border: 1px solid var(--line);
-        position: relative;
-      }
-
-      .avatar::before {
-        content: "";
-        position: absolute;
-        width: 42px;
-        height: 20px;
-        border-radius: 60% 50% 35% 30%;
-        background: #182233;
-        left: 27px;
-        top: 20px;
-        transform: rotate(-8deg);
-      }
-
-      .avatar::after {
-        content: "EW";
-        position: absolute;
-        inset: auto 18px 17px;
-        height: 36px;
-        border-radius: 18px 18px 10px 10px;
-        display: grid;
-        place-items: center;
-        background: #172234;
-        color: #fff;
-        font-size: 13px;
-        font-weight: 800;
-      }
-
-      .profile-text {
-        min-width: 0;
-      }
-
-      .profile-text strong {
-        display: block;
-        margin-bottom: 8px;
-        font-size: 16px;
-      }
-
-      .profile-text p {
-        margin: 0 0 10px;
-        color: var(--muted);
-        line-height: 1.45;
-      }
-
-      .profile-meta {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 10px 14px;
-        justify-content: flex-start;
-        color: var(--muted);
-        font-size: 14px;
-      }
-
-      .text-link {
-        color: var(--blue);
-        font-weight: 750;
       }
 
       .hero-art {
@@ -1432,14 +1368,6 @@
           font-size: 44px;
         }
 
-        .profile-strip {
-          align-items: center;
-        }
-
-        .avatar {
-          width: 72px;
-        }
-
         .featured-visual {
           min-height: 205px;
         }
@@ -1597,18 +1525,6 @@
             <p class="eyebrow">About</p>
             <h1>Hey, I am Elad.</h1>
             <p class="hero-copy">I work across product analytics, data science, and BI to support product decisions, design experiments, and improve AI and data products.</p>
-            <div class="profile-strip">
-              <div class="avatar" aria-hidden="true"></div>
-              <div class="profile-text">
-                <strong>Builder based in Israel.</strong>
-                <p>Focused on small, useful products that make daily work cleaner and more efficient.</p>
-                <div class="profile-meta">
-                  <span>Based in Israel</span>
-                  <span aria-hidden="true">|</span>
-                  <a class="text-link" href="https://www.linkedin.com/in/elad-weller/" target="_blank" rel="noreferrer">Connect on LinkedIn -&gt;</a>
-                </div>
-              </div>
-            </div>
           </div>
           <div class="hero-art" aria-hidden="true">
             <div class="diagram">
@@ -2081,6 +1997,7 @@
             card.innerHTML = `
               <span class="skill-group-category">${skill.title}</span>
               <strong>${value.trim()}</strong>
+              <p class="skill-group-note"></p>
             `;
             return card;
           });
