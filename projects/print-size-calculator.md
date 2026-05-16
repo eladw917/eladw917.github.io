@@ -22,7 +22,7 @@ A comprehensive web application that helps photographers, designers, and print p
 - **Frontend**: React, TypeScript, Tailwind CSS
 - **Backend**: Node.js, Express.js
 - **Deployment**: Vercel
-- **Domain**: Custom domain (printsizecalculator.com)
+- **Domain**: Cloudflare Pages (print-size-calculator.pages.dev)
 
 ## 📊 Impact
 
@@ -32,7 +32,7 @@ A comprehensive web application that helps photographers, designers, and print p
 
 ## 🔗 Links
 
-- **[Live Demo](https://printsizecalculator.com/)**
+- **[Live Demo](https://print-size-calculator.pages.dev/)**
 - **[GitHub Repository](https://github.com/eladw917/print-size-calculator)**
 
 ---

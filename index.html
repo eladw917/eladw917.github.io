@@ -661,122 +661,6 @@
         line-height: 1.55;
       }
 
-      .hero-art {
-        min-height: 260px;
-        position: relative;
-        display: grid;
-        place-items: center;
-        width: min(420px, 100%);
-        margin: 0 auto;
-      }
-
-      .diagram {
-        position: relative;
-        width: min(420px, 100%);
-        aspect-ratio: 1.3;
-      }
-
-      .grid-plane {
-        position: absolute;
-        inset: 42px 28px 46px 20px;
-        transform: rotate(-30deg) skewX(29deg);
-        border: 1px solid rgba(9, 105, 246, 0.34);
-        background-image:
-          linear-gradient(rgba(9, 105, 246, 0.15) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(9, 105, 246, 0.15) 1px, transparent 1px);
-        background-size: 32px 32px;
-      }
-
-      .cube-shell,
-      .cube-core,
-      .floating-window,
-      .floating-card,
-      .orbit-dot,
-      .ring {
-        position: absolute;
-      }
-
-      .cube-shell {
-        left: 147px;
-        top: 68px;
-        width: 134px;
-        height: 134px;
-        border: 2px solid rgba(9, 105, 246, 0.55);
-        transform: rotate(45deg) skew(-8deg, -8deg);
-      }
-
-      .cube-core {
-        left: 181px;
-        top: 101px;
-        width: 68px;
-        height: 68px;
-        background:
-          linear-gradient(135deg, rgba(9, 105, 246, 0.92), rgba(98, 160, 255, 0.66));
-        box-shadow: 0 18px 34px rgba(9, 105, 246, 0.18);
-        transform: rotate(45deg) skew(-8deg, -8deg);
-      }
-
-      .floating-window {
-        right: 5px;
-        top: 56px;
-        width: 92px;
-        height: 74px;
-        border: 1px solid rgba(9, 105, 246, 0.55);
-        transform: skewY(30deg);
-      }
-
-      .floating-window::before {
-        content: "</>";
-        position: absolute;
-        inset: 22px 0 0;
-        text-align: center;
-        color: rgba(9, 105, 246, 0.56);
-        font-size: 24px;
-        font-weight: 800;
-        transform: skewY(-30deg);
-      }
-
-      .floating-card {
-        left: 40px;
-        bottom: 18px;
-        width: 120px;
-        height: 72px;
-        border: 1px solid rgba(9, 105, 246, 0.45);
-        transform: rotate(28deg) skewX(-20deg);
-        background: color-mix(in srgb, var(--surface) 70%, transparent);
-      }
-
-      .floating-card::after {
-        content: "";
-        position: absolute;
-        left: 22px;
-        top: 27px;
-        width: 64px;
-        height: 2px;
-        background: rgba(9, 105, 246, 0.35);
-        box-shadow: 0 10px 0 rgba(9, 105, 246, 0.26), 0 20px 0 rgba(9, 105, 246, 0.18);
-      }
-
-      .orbit-dot {
-        width: 22px;
-        height: 22px;
-        border: 2px solid var(--blue-deep);
-        border-radius: 50%;
-        right: 150px;
-        top: 28px;
-        background: var(--surface);
-      }
-
-      .ring {
-        width: 42px;
-        height: 42px;
-        border: 2px solid var(--blue);
-        border-radius: 50%;
-        right: 37px;
-        bottom: 44px;
-        background: color-mix(in srgb, var(--surface) 70%, transparent);
-      }
-
       .featured {
         display: flex;
         flex-direction: column;
@@ -1157,135 +1041,44 @@
         font-weight: 850;
       }
 
-      .thumb-tabs {
-        background: linear-gradient(135deg, #e9eef6, #cfe1ff);
+      .thumb-store {
+        display: grid;
+        place-items: center;
+        background:
+          radial-gradient(circle at 20% 22%, rgba(234, 67, 53, 0.16), transparent 26%),
+          radial-gradient(circle at 80% 20%, rgba(251, 188, 5, 0.18), transparent 28%),
+          radial-gradient(circle at 78% 78%, rgba(52, 168, 83, 0.16), transparent 30%),
+          linear-gradient(135deg, #f8fbff, #e8f0fe);
       }
 
-      .thumb-tabs::before,
-      .thumb-tabs::after {
+      .thumb-store::before {
+        content: "";
+        width: 82px;
+        height: 76px;
+        border-radius: 13px 13px 18px 18px;
+        background:
+          radial-gradient(circle at 50% 54%, #4285f4 0 14px, #ffffff 15px 19px, transparent 20px),
+          conic-gradient(from -35deg at 50% 54%, #34a853 0 34%, #fbbc05 0 67%, #ea4335 0 100%),
+          linear-gradient(#ffffff, #ffffff);
+        border: 1px solid rgba(32, 80, 150, 0.16);
+        box-shadow: 0 18px 34px rgba(66, 133, 244, 0.2);
+      }
+
+      .thumb-store::after {
         content: "";
         position: absolute;
-        border-radius: 7px;
-        border: 1px solid rgba(20, 42, 78, 0.13);
-        background: rgba(255, 255, 255, 0.86);
-        box-shadow: 0 10px 22px rgba(40, 80, 140, 0.12);
-      }
-
-      .thumb-tabs::before {
-        left: 32px;
-        top: 22px;
-        width: 142px;
-        height: 84px;
-      }
-
-      .thumb-tabs::after {
-        right: 30px;
-        top: 38px;
-        width: 96px;
-        height: 68px;
-        background:
-          linear-gradient(#0969f6 0 8px, transparent 8px),
-          repeating-linear-gradient(#e7edf5 0 8px, transparent 8px 18px),
-          #fff;
-      }
-
-      .thumb-mixpanel {
-        background:
-          radial-gradient(circle at 74% 20%, rgba(9, 105, 246, 0.28), transparent 28%),
-          linear-gradient(135deg, #101827, #06101f);
-      }
-
-      .thumb-mixpanel::before {
-        content: "$ events";
-        position: absolute;
-        left: 34px;
-        top: 44px;
-        color: #ffffff;
-        font-size: 24px;
-        font-weight: 780;
-      }
-
-      .thumb-mixpanel::after {
-        content: "";
-        position: absolute;
-        right: 26px;
-        top: 30px;
-        width: 76px;
-        height: 82px;
-        border: 1px solid rgba(255, 255, 255, 0.13);
-        border-radius: 7px;
-        background: repeating-linear-gradient(rgba(255, 255, 255, 0.14) 0 7px, transparent 7px 17px);
+        top: 24px;
+        width: 42px;
+        height: 20px;
+        border: 4px solid #4285f4;
+        border-bottom: 0;
+        border-radius: 24px 24px 0 0;
       }
 
       .thumb-haiku {
         background:
-          radial-gradient(circle at 78% 24%, rgba(255, 255, 255, 0.4), transparent 28%),
-          linear-gradient(135deg, #1b2433, #32425f);
-      }
-
-      .thumb-haiku::before {
-        content: "Haiku";
-        position: absolute;
-        left: 32px;
-        top: 34px;
-        color: #ffffff;
-        font-size: 24px;
-        font-weight: 820;
-        letter-spacing: 0.01em;
-      }
-
-      .thumb-haiku::after {
-        content: "";
-        position: absolute;
-        right: 28px;
-        top: 30px;
-        width: 96px;
-        height: 84px;
-        border-radius: 18px;
-        background:
-          radial-gradient(circle at 24px 20px, rgba(255, 255, 255, 0.88) 0 4px, transparent 5px),
-          radial-gradient(circle at 54px 38px, rgba(255, 255, 255, 0.72) 0 4px, transparent 5px),
-          radial-gradient(circle at 28px 58px, rgba(255, 255, 255, 0.54) 0 4px, transparent 5px),
-          linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
-        border: 1px solid rgba(255, 255, 255, 0.12);
-      }
-
-      .thumb-whatsapp {
-        background:
-          radial-gradient(circle at 25% 22%, rgba(255, 255, 255, 0.26), transparent 28%),
-          linear-gradient(135deg, #1f3b2d, #2f7a4d);
-      }
-
-      .thumb-whatsapp::before,
-      .thumb-whatsapp::after {
-        content: "";
-        position: absolute;
-        border-radius: 18px;
-        background: rgba(255, 255, 255, 0.92);
-      }
-
-      .thumb-whatsapp::before {
-        left: 30px;
-        top: 28px;
-        width: 74px;
-        height: 48px;
-      }
-
-      .thumb-whatsapp::after {
-        right: 28px;
-        top: 52px;
-        width: 84px;
-        height: 40px;
-      }
-
-      .thumb-whatsapp .bubble-tail,
-      .thumb-whatsapp .bubble-tail::before {
-        content: "";
-        position: absolute;
-        width: 12px;
-        height: 12px;
-        transform: rotate(45deg);
-        background: rgba(255, 255, 255, 0.92);
+          linear-gradient(rgba(7, 17, 31, 0.08), rgba(7, 17, 31, 0.08)),
+          url("https://haiku-mania.pages.dev/intro/opening-screen.webp") center / cover;
       }
 
       .contact-pane {
@@ -1359,14 +1152,6 @@
           padding-top: 72px;
         }
 
-        .hero-art {
-          min-height: 250px;
-        }
-
-        .diagram {
-          width: min(360px, 100%);
-        }
-
         .featured {
           width: calc(100% - 32px);
           gap: 16px;
@@ -1425,14 +1210,6 @@
         .hero {
           gap: 24px;
           padding-top: 28px;
-        }
-
-        .hero-art {
-          min-height: 205px;
-        }
-
-        .diagram {
-          transform: scale(0.78);
         }
 
         h1 {
@@ -1497,17 +1274,6 @@
             <h1>Personal Project Index</h1>
             <p class="hero-copy">A collection of tools, browser extensions, and product utilities I am building in public.</p>
           </div>
-          <div class="hero-art" aria-hidden="true">
-            <div class="diagram">
-              <div class="grid-plane"></div>
-              <div class="cube-shell"></div>
-              <div class="cube-core"></div>
-              <div class="floating-window"></div>
-              <div class="floating-card"></div>
-              <div class="orbit-dot"></div>
-              <div class="ring"></div>
-            </div>
-          </div>
         </section>
 
         <section class="featured page-shell" aria-labelledby="featured-title">
@@ -1525,7 +1291,7 @@
             <div class="project-actions">
               <span class="status">Live</span>
               <span class="divider" aria-hidden="true"></span>
-              <a class="text-link" data-featured-link href="/projects/print-size-calculator/">View project -></a>
+              <a class="text-link" data-featured-link href="https://print-size-calculator.pages.dev/" target="_blank" rel="noreferrer">View project -></a>
             </div>
           </div>
         </section>
@@ -1552,7 +1318,7 @@
 
           <div class="project-grid" id="project-grid">
             <article class="project-card" data-category="utility" data-title="Print Size Calculator" data-year="2026">
-              <a class="project-link" href="/projects/print-size-calculator/">
+              <a class="project-link" href="https://print-size-calculator.pages.dev/" target="_blank" rel="noreferrer">
                 <div class="project-visual thumb-print" aria-hidden="true"></div>
                 <div class="project-body">
                   <span class="category utility">Web Tool</span>
@@ -1564,8 +1330,8 @@
             </article>
 
             <article class="project-card" data-category="extension" data-title="Mimi's Tab Manager" data-year="2025">
-              <a class="project-link" href="https://chrome.google.com/webstore/devconsole/0a24c3a5-d208-46b9-9c1a-023acbe2f7a5/idobmlmlfkmcjhojkeeihfgiaochcboc/edit" target="_blank" rel="noreferrer">
-                <div class="project-visual thumb-tabs" aria-hidden="true"></div>
+              <a class="project-link" href="https://chromewebstore.google.com/detail/mimis-tab-manager-chrome/idobmlmlfkmcjhojkeeihfgiaochcboc?authuser=0&hl=en-GB" target="_blank" rel="noreferrer">
+                <div class="project-visual thumb-store" aria-hidden="true"></div>
                 <div class="project-body">
                   <span class="category design">Extension</span>
                   <h3>Mimi's Tab Manager</h3>
@@ -1576,8 +1342,8 @@
             </article>
 
             <article class="project-card" data-category="extension" data-title="Mixpanel Activity Navigator" data-year="2025">
-              <a class="project-link" href="https://chrome.google.com/webstore/devconsole/0a24c3a5-d208-46b9-9c1a-023acbe2f7a5/njhkifoehgnmgmhlghgjlakohmkfdpan/edit" target="_blank" rel="noreferrer">
-                <div class="project-visual thumb-mixpanel" aria-hidden="true"></div>
+              <a class="project-link" href="https://chromewebstore.google.com/detail/mixpanel-activity-navigat/njhkifoehgnmgmhlghgjlakohmkfdpan?authuser=0&hl=en-GB" target="_blank" rel="noreferrer">
+                <div class="project-visual thumb-store" aria-hidden="true"></div>
                 <div class="project-body">
                   <span class="category">Extension</span>
                   <h3>Mixpanel Activity Navigator</h3>
@@ -1587,8 +1353,8 @@
               </a>
             </article>
             <article class="project-card" data-category="extension" data-title="WhatsApp Reply Pal" data-year="2025">
-              <a class="project-link" href="https://chrome.google.com/webstore/devconsole/0a24c3a5-d208-46b9-9c1a-023acbe2f7a5/cmgbeceojeomlhcbljgepcjdjkoohgpe/edit" target="_blank" rel="noreferrer">
-                <div class="project-visual thumb-whatsapp" aria-hidden="true"></div>
+              <a class="project-link" href="https://chromewebstore.google.com/detail/whatsapp-replypal/cmgbeceojeomlhcbljgepcjdjkoohgpe?authuser=0&hl=en-GB" target="_blank" rel="noreferrer">
+                <div class="project-visual thumb-store" aria-hidden="true"></div>
                 <div class="project-body">
                   <span class="category design">Extension</span>
                   <h3>WhatsApp Reply Pal</h3>
@@ -1618,17 +1384,6 @@
             <p class="eyebrow">About</p>
             <h1>Hey, I am Elad.</h1>
             <p class="hero-copy">I work across product analytics, data science, and BI to support product decisions, design experiments, and improve AI and data products.</p>
-          </div>
-          <div class="hero-art" aria-hidden="true">
-            <div class="diagram">
-              <div class="grid-plane"></div>
-              <div class="cube-shell"></div>
-              <div class="cube-core"></div>
-              <div class="floating-window"></div>
-              <div class="floating-card"></div>
-              <div class="orbit-dot"></div>
-              <div class="ring"></div>
-            </div>
           </div>
         </section>
 
@@ -1991,29 +1746,29 @@
         {
           title: "Print Size Calculator",
           description: "A precise web utility for photographers, designers, and print professionals calculating sizes, resolution, aspect ratios, and costs.",
-          href: "/projects/print-size-calculator/",
+          href: "https://print-size-calculator.pages.dev/",
           visual: "thumb-print",
           tags: ["React", "TypeScript", "Calculators", "Photography"]
         },
         {
           title: "Mimi's Tab Manager",
           description: "A Chrome extension for organizing browser tabs with grouping, sessions, search, and cleanup flows.",
-          href: "https://chrome.google.com/webstore/devconsole/0a24c3a5-d208-46b9-9c1a-023acbe2f7a5/idobmlmlfkmcjhojkeeihfgiaochcboc/edit",
-          visual: "thumb-tabs",
+          href: "https://chromewebstore.google.com/detail/mimis-tab-manager-chrome/idobmlmlfkmcjhojkeeihfgiaochcboc?authuser=0&hl=en-GB",
+          visual: "thumb-store",
           tags: ["Chrome", "Tabs API", "Productivity"]
         },
         {
           title: "Mixpanel Activity Navigator",
           description: "A browser extension that helps teams filter events, track properties, and move through Mixpanel user timelines faster.",
-          href: "https://chrome.google.com/webstore/devconsole/0a24c3a5-d208-46b9-9c1a-023acbe2f7a5/njhkifoehgnmgmhlghgjlakohmkfdpan/edit",
-          visual: "thumb-mixpanel",
+          href: "https://chromewebstore.google.com/detail/mixpanel-activity-navigat/njhkifoehgnmgmhlghgjlakohmkfdpan?authuser=0&hl=en-GB",
+          visual: "thumb-store",
           tags: ["JavaScript", "Analytics", "Chrome"]
         },
         {
           title: "WhatsApp Reply Pal",
           description: "A Chrome extension for drafting and managing quick WhatsApp replies.",
-          href: "https://chrome.google.com/webstore/devconsole/0a24c3a5-d208-46b9-9c1a-023acbe2f7a5/cmgbeceojeomlhcbljgepcjdjkoohgpe/edit",
-          visual: "thumb-whatsapp",
+          href: "https://chromewebstore.google.com/detail/whatsapp-replypal/cmgbeceojeomlhcbljgepcjdjkoohgpe?authuser=0&hl=en-GB",
+          visual: "thumb-store",
           tags: ["Chrome", "Messaging", "Productivity"]
         },
         {
