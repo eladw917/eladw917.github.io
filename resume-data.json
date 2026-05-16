@@ -1,0 +1,118 @@
+{
+  "entries": [
+    {
+      "key": "hello-heart",
+      "period": "2025 - current",
+      "company": "Hello Heart",
+      "role": "Product Data Analyst",
+      "tags": ["Med Tech", "A/B Testing", "B2C", "B2B"],
+      "summary": "Embedded in the clinical-product squad, supporting the full product lifecycle across research, event design, and post-launch measurement.",
+      "bullets": [
+        "Embedded in the clinical-product squad, supporting the full product lifecycle from preliminary research and event-spec/database design through post-launch analyses and A/B testing for continuous improvement.",
+        "Participating in the deployment of the company's strategic AI digital-health assistant from the product-analytics side: monitoring, designing data pipelines and analytic events, and analyzing usage funnels to improve adoption and retention.",
+        "Helping the product team and upper management design high- and low-level KPIs, monitoring performance, and suggesting improvements to reach periodic goals."
+      ]
+    },
+    {
+      "key": "wordtune",
+      "period": "2024 - May 2025",
+      "company": "Wordtune (by AI21Labs)",
+      "role": "Product Data Scientist",
+      "tags": ["AI Products", "A/B Testing", "Growth", "B2C"],
+      "summary": "Shipped new features with product, defined measurement frameworks, and supported A/B testing and AI deployment work.",
+      "bullets": [
+        "Worked closely with the product team to create new features, defining analytics events, product KPIs, and monitoring frameworks while conducting deep-dive analyses on growth opportunities and user behavior.",
+        "Designed, monitored, and analyzed A/B testing of new features.",
+        "Implemented AI21's proprietary LLM (Jamba) in a real production environment.",
+        "Created Airflow processes and dashboards for monitoring the main product KPIs for upper management."
+      ]
+    },
+    {
+      "key": "placer",
+      "period": "2023 - Apr 2024",
+      "company": "Placer.ai",
+      "role": "Senior Data Analyst (Data Science)",
+      "tags": ["Data Science", "B2B", "Spatial Data"],
+      "summary": "Built data products, production pipelines, and internal tools that supported platform and customer-facing analysis.",
+      "bullets": [
+        "Created new data products, including visualization and new metrics for the Placer.ai platform and customers, using SQL and Tableau.",
+        "Maintained production-level data pipelines using Python, Jenkins, and Airflow.",
+        "Queried large data sources using PySpark and BigQuery.",
+        "Monitored and evaluated the development and deployment of ML products as part of a DS team.",
+        "Built internal tools in Tableau and Streamlit for internal evaluation and tracking of DS products."
+      ]
+    },
+    {
+      "key": "appsflyer-senior",
+      "period": "2022 - Apr 2023",
+      "company": "Appsflyer",
+      "role": "Senior Product Data Analyst",
+      "tags": ["B2B", "Large Scale Data", "Ad-Tech"],
+      "summary": "Owned product monitoring and ML model workflows for new product deployment and customer-facing insights.",
+      "bullets": [
+        "Worked together with Product and R&D teams, defining and creating monitoring for the deployment of new products.",
+        "Owned the team's ML models, including monitoring, debugging, feature selection, and engineering.",
+        "Created meaningful semi-automatic insights proposed as a product for Appsflyer customers."
+      ]
+    },
+    {
+      "key": "appsflyer-junior",
+      "period": "2020 - Nov 2022",
+      "company": "Appsflyer",
+      "role": "Product Data Analyst",
+      "tags": ["B2B", "Large Scale Data", "Ad-Tech"],
+      "summary": "Built reporting, forecasting, and alerting systems to keep product data reliable and useful.",
+      "bullets": [
+        "Built ETL processes and dashboards for non-data personnel.",
+        "Created time-series forecasting and alerting tools for monitoring abnormal data patterns."
+      ]
+    },
+    {
+      "key": "finance",
+      "period": "2017 - Nov 2020",
+      "company": "Ministry of Finance",
+      "role": "Economic Researcher",
+      "tags": ["Research", "Government", "Policy"],
+      "summary": "Worked on economic research and analysis in the Foreign Investment Division.",
+      "bullets": [
+        "Worked in the Foreign Investment Division on economic research and analysis."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "title": "Data Analysis",
+      "value": "SQL, Python, spatial and geographical data analysis, machine learning"
+    },
+    {
+      "title": "BI Tools",
+      "value": "Looker, Tableau, Looker Studio, Streamlit, Amplitude"
+    },
+    {
+      "title": "Big Data",
+      "value": "PySpark, BigQuery, Athena, Airflow, Jenkins, ETL"
+    }
+  ],
+  "education": [
+    {
+      "period": "2020 - 2021",
+      "institution": "Y-data School of Data Science (now Nebius Academy)",
+      "learned": "Data science methods and applied analytics"
+    },
+    {
+      "period": "2017 - 2019",
+      "institution": "The Hebrew University of Jerusalem",
+      "learned": "Big data analytics and business strategy"
+    },
+    {
+      "period": "2015 - 2016",
+      "institution": "Nanjing University",
+      "learned": "Chinese language and cross-cultural communication"
+    },
+    {
+      "period": "2012 - 2015",
+      "institution": "The Hebrew University of Jerusalem",
+      "learned": "Asian studies and regional context"
+    }
+  ]
+}
