@@ -676,19 +676,12 @@
         text-align: center;
       }
 
-      .featured-visual,
       .project-visual {
         position: relative;
         overflow: hidden;
         border-radius: 7px;
         border: 1px solid var(--line);
         background: var(--surface-soft);
-      }
-
-      .featured-visual {
-        width: 100%;
-        max-width: 420px;
-        min-height: 244px;
       }
 
       .browser-frame {
@@ -810,10 +803,30 @@
         line-height: 1.1;
       }
 
+      .featured-meta {
+        margin: 0;
+        color: var(--blue);
+        font-size: 12px;
+        font-weight: 850;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
       .featured p,
       .project-card p {
         color: var(--muted);
         line-height: 1.45;
+      }
+
+      .featured-description {
+        max-width: 58ch;
+        margin: 0 auto;
+      }
+
+      .featured-detail {
+        max-width: 60ch;
+        margin: 8px auto 0;
+        color: color-mix(in srgb, var(--ink) 84%, var(--muted));
       }
 
       .tag-row {
@@ -1261,10 +1274,6 @@
           font-size: 44px;
         }
 
-        .featured-visual {
-          min-height: 205px;
-        }
-
         .browser-frame {
           inset: 42px 20px 28px;
         }
@@ -1322,11 +1331,12 @@
         </section>
 
         <section class="featured page-shell" aria-labelledby="featured-title">
-          <div class="featured-visual thumb-print" data-featured-visual aria-hidden="true"></div>
           <div class="featured-content">
             <span class="featured-label">Featured Project</span>
+            <p class="featured-meta" data-featured-meta>Web Tool · 2026</p>
             <h2 id="featured-title" data-featured-title>Print Size Calculator</h2>
-            <p data-featured-description>A precise web utility for photographers, designers, and print professionals calculating sizes, resolution, aspect ratios, and costs.</p>
+            <p class="featured-description" data-featured-description>A precise web utility for photographers, designers, and print professionals calculating sizes, resolution, aspect ratios, and costs.</p>
+            <p class="featured-detail" data-featured-detail>Built to answer production questions quickly, it turns print sizing into something easy to compare, tune, and hand off.</p>
             <div class="tag-row" data-featured-tags aria-label="Technologies">
               <span class="tag">React</span>
               <span class="tag">TypeScript</span>
@@ -1369,7 +1379,6 @@
                   <span class="category utility">Web Tool</span>
                   <h3>Print Size Calculator</h3>
                   <p>Calculate print sizes, resolutions, aspect ratios, and production costs.</p>
-                  <div class="tag-row"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Print</span></div>
                 </div>
               </a>
             </article>
@@ -1381,7 +1390,6 @@
                   <span class="category design">Extension</span>
                   <h3>Mimi's Tab Manager</h3>
                   <p>Organize browser tabs with grouping, sessions, search, and cleanup flows.</p>
-                  <div class="tag-row"><span class="tag">Chrome</span><span class="tag">Tabs API</span><span class="tag">Productivity</span></div>
                 </div>
               </a>
             </article>
@@ -1393,7 +1401,6 @@
                   <span class="category">Extension</span>
                   <h3>Mixpanel Activity Navigator</h3>
                   <p>Filter events, track properties, and move through user timelines faster.</p>
-                  <div class="tag-row"><span class="tag">JavaScript</span><span class="tag">Analytics</span><span class="tag">Chrome</span></div>
                 </div>
               </a>
             </article>
@@ -1404,7 +1411,6 @@
                   <span class="category design">Extension</span>
                   <h3>WhatsApp Reply Pal</h3>
                   <p>A Chrome extension for drafting and managing quick WhatsApp replies.</p>
-                  <div class="tag-row"><span class="tag">Chrome</span><span class="tag">Messaging</span><span class="tag">Productivity</span></div>
                 </div>
               </a>
             </article>
@@ -1415,7 +1421,6 @@
                   <span class="category utility">Web Tool</span>
                   <h3>Haiku Mania</h3>
                   <p>A playful haiku experiment for creating short poems and quick creative prompts.</p>
-                  <div class="tag-row"><span class="tag">Creative Coding</span><span class="tag">Poetry</span><span class="tag">Experiment</span></div>
                 </div>
               </a>
             </article>
@@ -1790,37 +1795,42 @@
       const featuredProjects = [
         {
           title: "Print Size Calculator",
+          meta: "Web Tool · 2026",
           description: "A precise web utility for photographers, designers, and print professionals calculating sizes, resolution, aspect ratios, and costs.",
+          detail: "Built to answer production questions quickly, it turns print sizing into something easy to compare, tune, and hand off.",
           href: "https://print-size-calculator.pages.dev/",
-          visual: "thumb-print",
           tags: ["React", "TypeScript", "Calculators", "Photography"]
         },
         {
           title: "Mimi's Tab Manager",
+          meta: "Extension · 2025",
           description: "A Chrome extension for organizing browser tabs with grouping, sessions, search, and cleanup flows.",
+          detail: "It keeps large browsing sessions manageable by making tab cleanup and recovery feel deliberate instead of chaotic.",
           href: "https://chromewebstore.google.com/detail/mimis-tab-manager-chrome/idobmlmlfkmcjhojkeeihfgiaochcboc?authuser=0&hl=en-GB",
-          visual: "thumb-mimi",
           tags: ["Chrome", "Tabs API", "Productivity"]
         },
         {
           title: "Mixpanel Activity Navigator",
+          meta: "Extension · 2025",
           description: "A browser extension that helps teams filter events, track properties, and move through Mixpanel user timelines faster.",
+          detail: "It is tuned for analytics workflows where fast filtering and property inspection save time on every investigation.",
           href: "https://chromewebstore.google.com/detail/mixpanel-activity-navigat/njhkifoehgnmgmhlghgjlakohmkfdpan?authuser=0&hl=en-GB",
-          visual: "thumb-mixpanel",
           tags: ["JavaScript", "Analytics", "Chrome"]
         },
         {
           title: "WhatsApp Reply Pal",
+          meta: "Extension · 2025",
           description: "A Chrome extension for drafting and managing quick WhatsApp replies.",
+          detail: "It is designed for fast message drafting, so routine replies stay organized without leaving the conversation flow.",
           href: "https://chromewebstore.google.com/detail/whatsapp-replypal/cmgbeceojeomlhcbljgepcjdjkoohgpe?authuser=0&hl=en-GB",
-          visual: "thumb-whatsapp",
           tags: ["Chrome", "Messaging", "Productivity"]
         },
         {
           title: "Haiku Mania",
+          meta: "Web Tool · 2026",
           description: "A playful haiku experiment for creating short poems and quick creative prompts.",
+          detail: "It is intentionally lightweight, keeping the writing flow focused on quick prompts and compact creative output.",
           href: "https://haiku-mania.pages.dev/",
-          visual: "thumb-haiku",
           tags: ["Creative Coding", "Poetry", "Experiment"]
         }
       ];
@@ -1972,19 +1982,32 @@
         }
       }
 
-      function renderFeaturedProject() {
-        const project = featuredProjects[Math.floor(Math.random() * featuredProjects.length)];
-        const visual = document.querySelector("[data-featured-visual]");
-        const title = document.querySelector("[data-featured-title]");
-        const description = document.querySelector("[data-featured-description]");
-        const tags = document.querySelector("[data-featured-tags]");
-        const link = document.querySelector("[data-featured-link]");
+      const grid = document.getElementById("project-grid");
+      const cards = Array.from(grid.querySelectorAll(".project-card"));
+      const filters = Array.from(document.querySelectorAll(".filter-button"));
+      const sort = document.getElementById("project-sort");
+      const featuredMeta = document.querySelector("[data-featured-meta]");
+      const featuredTitle = document.querySelector("[data-featured-title]");
+      const featuredDescription = document.querySelector("[data-featured-description]");
+      const featuredDetail = document.querySelector("[data-featured-detail]");
+      const featuredTags = document.querySelector("[data-featured-tags]");
+      const featuredLink = document.querySelector("[data-featured-link]");
+      const featuredByTitle = new Map(featuredProjects.map((project) => [project.title, project]));
+      const defaultFeaturedProject = featuredProjects[0];
+      let activeFilter = "all";
 
-        visual.className = `featured-visual ${project.visual}`;
-        title.textContent = project.title;
-        description.textContent = project.description;
-        link.href = project.href;
-        tags.replaceChildren(...project.tags.map((tag) => {
+      function setFeaturedProject(project) {
+        if (!project) {
+          return;
+        }
+
+        featuredMeta.textContent = project.meta;
+        featuredTitle.textContent = project.title;
+        featuredDescription.textContent = project.description;
+        featuredDetail.textContent = project.detail;
+        featuredLink.href = project.href;
+
+        featuredTags.replaceChildren(...project.tags.map((tag) => {
           const item = document.createElement("span");
           item.className = "tag";
           item.textContent = tag;
@@ -1992,11 +2015,12 @@
         }));
       }
 
-      const grid = document.getElementById("project-grid");
-      const cards = Array.from(grid.querySelectorAll(".project-card"));
-      const filters = Array.from(document.querySelectorAll(".filter-button"));
-      const sort = document.getElementById("project-sort");
-      let activeFilter = "all";
+      function updateHeroFromCard(card) {
+        const project = featuredByTitle.get(card?.dataset.title);
+        if (project) {
+          setFeaturedProject(project);
+        }
+      }
 
       function renderProjects() {
         const sortedCards = [...cards].sort((a, b) => {
@@ -2025,8 +2049,18 @@
 
       sort.addEventListener("change", renderProjects);
 
-      renderFeaturedProject();
+      setFeaturedProject(defaultFeaturedProject);
       renderProjects();
+      cards.forEach((card) => {
+        card.addEventListener("pointerenter", () => updateHeroFromCard(card));
+        card.addEventListener("focusin", () => updateHeroFromCard(card));
+      });
+      grid.addEventListener("pointerleave", () => setFeaturedProject(defaultFeaturedProject));
+      grid.addEventListener("focusout", (event) => {
+        if (!grid.contains(event.relatedTarget)) {
+          setFeaturedProject(defaultFeaturedProject);
+        }
+      });
       syncView(getRequestedView(), {pushState: false});
       loadResumeData().catch((error) => {
         console.error(error);
