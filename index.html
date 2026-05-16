@@ -712,29 +712,26 @@
         pointer-events: none;
       }
 
-      .featured-visual::after {
-        content: "";
+      .featured-link-badge {
         position: absolute;
-        inset: 0;
-        margin: auto;
-        width: 82px;
-        height: 82px;
-        border-radius: 18px;
-        border: 1px solid rgba(255, 255, 255, 0.7);
-        background: rgba(255, 255, 255, 0.88);
-        box-shadow: 0 18px 38px rgba(25, 39, 61, 0.16);
+        top: 14px;
+        right: 14px;
+        display: grid;
+        place-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 10px 22px rgba(25, 39, 61, 0.14);
         backdrop-filter: blur(2px);
+        z-index: 1;
       }
 
-      .featured-visual svg {
-        position: absolute;
-        inset: 0;
-        margin: auto;
-        width: 26px;
-        height: 26px;
-        z-index: 1;
+      .featured-link-badge svg {
+        width: 18px;
+        height: 18px;
         color: var(--blue);
-        pointer-events: none;
       }
 
       .browser-frame {
@@ -992,6 +989,21 @@
       .category.utility {
         color: var(--green);
         background: color-mix(in srgb, var(--green) 13%, var(--surface));
+      }
+
+      .category.tool {
+        color: var(--green);
+        background: color-mix(in srgb, var(--green) 13%, var(--surface));
+      }
+
+      .category.chrome-extension {
+        color: var(--violet);
+        background: color-mix(in srgb, var(--violet) 12%, var(--surface));
+      }
+
+      .category.game {
+        color: var(--violet);
+        background: color-mix(in srgb, var(--violet) 12%, var(--surface));
       }
 
       .project-card h3 {
@@ -1337,10 +1349,12 @@
             <p class="featured-detail" data-featured-detail>Built to answer production questions quickly, it turns print sizing into something easy to compare, tune, and hand off.</p>
           </div>
           <a class="featured-visual thumb-print" data-featured-visual href="https://print-size-calculator.pages.dev/" target="_blank" rel="noreferrer" aria-label="Open featured project">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path d="M7 17L17 7"></path>
-              <path d="M9 7h8v8"></path>
-            </svg>
+            <span class="featured-link-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M7 17L17 7"></path>
+                <path d="M9 7h8v8"></path>
+              </svg>
+            </span>
           </a>
         </section>
 
@@ -1349,59 +1363,60 @@
           <div class="toolbar">
             <div class="filters" role="toolbar" aria-label="Filter projects">
               <button class="filter-button" type="button" data-filter="all" aria-pressed="true">All</button>
-              <button class="filter-button" type="button" data-filter="utility" aria-pressed="false">Tools</button>
-              <button class="filter-button" type="button" data-filter="extension" aria-pressed="false">Extensions</button>
+              <button class="filter-button" type="button" data-filter="tool" aria-pressed="false">tool</button>
+              <button class="filter-button" type="button" data-filter="chrome-extension" aria-pressed="false">Chrome Extension</button>
+              <button class="filter-button" type="button" data-filter="game" aria-pressed="false">Game</button>
             </div>
           </div>
 
           <div class="project-grid" id="project-grid">
-            <article class="project-card" data-category="utility" data-title="Print Size Calculator" data-year="2026">
+            <article class="project-card" data-category="tool" data-title="Print Size Calculator" data-year="2026">
               <a class="project-link" href="https://print-size-calculator.pages.dev/" target="_blank" rel="noreferrer">
                 <div class="project-visual thumb-print" aria-hidden="true"></div>
                 <div class="project-body">
-                  <span class="category utility">Web Tool</span>
+                  <span class="category tool">tool</span>
                   <h3>Print Size Calculator</h3>
                   <p>Calculate print sizes, resolutions, aspect ratios, and production costs.</p>
                 </div>
               </a>
             </article>
 
-            <article class="project-card" data-category="extension" data-title="Mimi's Tab Manager" data-year="2025">
+            <article class="project-card" data-category="chrome-extension" data-title="Mimi's Tab Manager" data-year="2025">
               <a class="project-link" href="https://chromewebstore.google.com/detail/mimis-tab-manager-chrome/idobmlmlfkmcjhojkeeihfgiaochcboc?authuser=0&hl=en-GB" target="_blank" rel="noreferrer">
                 <div class="project-visual thumb-mimi" aria-hidden="true"></div>
                 <div class="project-body">
-                  <span class="category design">Extension</span>
+                  <span class="category chrome-extension">Chrome Extension</span>
                   <h3>Mimi's Tab Manager</h3>
                   <p>Organize browser tabs with grouping, sessions, search, and cleanup flows.</p>
                 </div>
               </a>
             </article>
 
-            <article class="project-card" data-category="extension" data-title="Mixpanel Activity Navigator" data-year="2025">
+            <article class="project-card" data-category="chrome-extension" data-title="Mixpanel Activity Navigator" data-year="2025">
               <a class="project-link" href="https://chromewebstore.google.com/detail/mixpanel-activity-navigat/njhkifoehgnmgmhlghgjlakohmkfdpan?authuser=0&hl=en-GB" target="_blank" rel="noreferrer">
                 <div class="project-visual thumb-mixpanel" aria-hidden="true"></div>
                 <div class="project-body">
-                  <span class="category">Extension</span>
+                  <span class="category chrome-extension">Chrome Extension</span>
                   <h3>Mixpanel Activity Navigator</h3>
                   <p>Filter events, track properties, and move through user timelines faster.</p>
                 </div>
               </a>
             </article>
-            <article class="project-card" data-category="extension" data-title="WhatsApp Reply Pal" data-year="2025">
+            <article class="project-card" data-category="chrome-extension" data-title="WhatsApp Reply Pal" data-year="2025">
               <a class="project-link" href="https://chromewebstore.google.com/detail/whatsapp-replypal/cmgbeceojeomlhcbljgepcjdjkoohgpe?authuser=0&hl=en-GB" target="_blank" rel="noreferrer">
                 <div class="project-visual thumb-whatsapp" aria-hidden="true"></div>
                 <div class="project-body">
-                  <span class="category design">Extension</span>
+                  <span class="category chrome-extension">Chrome Extension</span>
                   <h3>WhatsApp Reply Pal</h3>
                   <p>A Chrome extension for drafting and managing quick WhatsApp replies.</p>
                 </div>
               </a>
             </article>
-            <article class="project-card" data-category="utility" data-title="Haiku Mania" data-year="2026">
+            <article class="project-card" data-category="game" data-title="Haiku Mania" data-year="2026">
               <a class="project-link" href="https://haiku-mania.pages.dev/" target="_blank" rel="noreferrer">
                 <div class="project-visual thumb-haiku" aria-hidden="true"></div>
                 <div class="project-body">
-                  <span class="category utility">Web Tool</span>
+                  <span class="category game">Game</span>
                   <h3>Haiku Mania</h3>
                   <p>A playful haiku experiment for creating short poems and quick creative prompts.</p>
                 </div>
@@ -1778,7 +1793,8 @@
       const featuredProjects = [
         {
           title: "Print Size Calculator",
-          meta: "Web Tool · 2026",
+          meta: "tool · 2026",
+          visual: "thumb-print",
           description: "A precise web utility for photographers, designers, and print professionals calculating sizes, resolution, aspect ratios, and costs.",
           detail: "Built to answer production questions quickly, it turns print sizing into something easy to compare, tune, and hand off.",
           href: "https://print-size-calculator.pages.dev/",
@@ -1786,7 +1802,8 @@
         },
         {
           title: "Mimi's Tab Manager",
-          meta: "Extension · 2025",
+          meta: "Chrome Extension · 2025",
+          visual: "thumb-mimi",
           description: "A Chrome extension for organizing browser tabs with grouping, sessions, search, and cleanup flows.",
           detail: "It keeps large browsing sessions manageable by making tab cleanup and recovery feel deliberate instead of chaotic.",
           href: "https://chromewebstore.google.com/detail/mimis-tab-manager-chrome/idobmlmlfkmcjhojkeeihfgiaochcboc?authuser=0&hl=en-GB",
@@ -1794,7 +1811,8 @@
         },
         {
           title: "Mixpanel Activity Navigator",
-          meta: "Extension · 2025",
+          meta: "Chrome Extension · 2025",
+          visual: "thumb-mixpanel",
           description: "A browser extension that helps teams filter events, track properties, and move through Mixpanel user timelines faster.",
           detail: "It is tuned for analytics workflows where fast filtering and property inspection save time on every investigation.",
           href: "https://chromewebstore.google.com/detail/mixpanel-activity-navigat/njhkifoehgnmgmhlghgjlakohmkfdpan?authuser=0&hl=en-GB",
@@ -1802,7 +1820,8 @@
         },
         {
           title: "WhatsApp Reply Pal",
-          meta: "Extension · 2025",
+          meta: "Chrome Extension · 2025",
+          visual: "thumb-whatsapp",
           description: "A Chrome extension for drafting and managing quick WhatsApp replies.",
           detail: "It is designed for fast message drafting, so routine replies stay organized without leaving the conversation flow.",
           href: "https://chromewebstore.google.com/detail/whatsapp-replypal/cmgbeceojeomlhcbljgepcjdjkoohgpe?authuser=0&hl=en-GB",
@@ -1810,7 +1829,8 @@
         },
         {
           title: "Haiku Mania",
-          meta: "Web Tool · 2026",
+          meta: "Game · 2026",
+          visual: "thumb-haiku",
           description: "A playful haiku experiment for creating short poems and quick creative prompts.",
           detail: "It is intentionally lightweight, keeping the writing flow focused on quick prompts and compact creative output.",
           href: "https://haiku-mania.pages.dev/",
@@ -1972,7 +1992,6 @@
       const featuredTitle = document.querySelector("[data-featured-title]");
       const featuredDescription = document.querySelector("[data-featured-description]");
       const featuredDetail = document.querySelector("[data-featured-detail]");
-      const featuredLink = document.querySelector("[data-featured-link]");
       const featuredByTitle = new Map(featuredProjects.map((project) => [project.title, project]));
       const defaultFeaturedProject = featuredProjects[0];
       let activeFilter = "all";
