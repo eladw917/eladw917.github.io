@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Projects, games, Chrome extensions, and product analytics work by Elad Weller.">
+    <meta name="description" content="Elad Weller's portfolio of product analytics, BI, practical workflow tools, Chrome extensions, and lightweight web apps.">
     <title>Elad Weller - Projects</title>
     <style>
       :root {
@@ -223,14 +223,31 @@
         background: var(--surface);
         color: var(--ink);
         cursor: pointer;
-        font-size: 20px;
-        line-height: 1;
+        display: inline-grid;
+        place-items: center;
+        padding: 0;
+      }
+
+      .contact-modal-close svg {
+        width: 16px;
+        height: 16px;
       }
 
       .contact-modal-body {
         display: grid;
         gap: 10px;
         padding: 14px 16px 16px;
+      }
+
+      .contact-modal-copy {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .contact-links {
+        display: grid;
+        gap: 10px;
       }
 
       .contact-option {
@@ -251,6 +268,14 @@
 
       .contact-option:hover {
         border-color: var(--blue);
+      }
+
+      .contact-option[href] {
+        cursor: pointer;
+      }
+
+      .contact-option[href] .contact-option-text {
+        display: inline;
       }
 
       .contact-option-primary {
@@ -408,6 +433,56 @@
         margin: 0 0 14px;
         font-size: 18px;
         line-height: 1.2;
+      }
+
+      .about-stack {
+        display: grid;
+        gap: 16px;
+        width: min(880px, calc(100% - 32px));
+        margin: -8px auto 44px;
+      }
+
+      .about-panel {
+        padding: 18px 18px 20px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--surface);
+        box-shadow: 0 12px 32px rgba(25, 39, 61, 0.07);
+      }
+
+      .about-panel h2,
+      .about-panel h3 {
+        margin: 0 0 10px;
+      }
+
+      .about-panel h2 {
+        font-size: 18px;
+        line-height: 1.2;
+      }
+
+      .about-panel p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .about-focus {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .about-grid .about-panel {
+        margin: 0;
       }
 
       .resume-list {
@@ -912,6 +987,13 @@
         line-height: 1.2;
       }
 
+      .project-note {
+        margin: 8px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
       .thumb-print {
         background:
           linear-gradient(90deg, rgba(255, 255, 255, 0.92) 0 58%, rgba(224, 238, 251, 0.92) 58%),
@@ -1154,6 +1236,10 @@
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+
         .resume-entry-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
@@ -1261,7 +1347,7 @@
         </section>
 
         <section class="projects page-shell" id="projects" aria-labelledby="projects-title">
-          <h2 id="projects-title" style="position:absolute;left:-9999px;">Projects</h2>
+          <h2 id="projects-title" style="position:absolute;left:-9999px;">All Projects</h2>
           <div class="toolbar">
             <div class="filters" role="toolbar" aria-label="Filter projects">
               <button class="filter-button" type="button" data-filter="all" aria-pressed="true">All</button>
@@ -1279,8 +1365,36 @@
         <section class="hero page-shell">
           <div class="hero-intro">
             <p class="eyebrow">About</p>
-            <h1>Hey, I am Elad.</h1>
-            <p class="hero-copy">I work across product analytics, data science, and BI, translating messy product questions into event design, experiments, dashboards, and decisions teams can act on.</p>
+            <h1>Hey, I&apos;m Elad.</h1>
+            <p class="hero-copy">I work across product analytics, data science, and BI, helping teams turn messy product questions into clear event design, experiments, dashboards, and decisions. I enjoy building practical tools that reduce friction in real workflows, from analytics utilities to Chrome extensions and lightweight web apps.</p>
+          </div>
+        </section>
+
+        <section class="about-stack page-shell" aria-label="About details">
+          <div class="about-grid">
+            <article class="about-panel">
+              <h2>Professional Experience</h2>
+              <p>Product analytics, BI, experimentation, dashboarding, event taxonomy, funnel analysis, retention analysis, and stakeholder reporting.</p>
+            </article>
+
+            <article class="about-panel">
+              <h2>Skills and Tools</h2>
+              <p>SQL &middot; Python &middot; Product analytics &middot; Experiment design &middot; Event tracking &middot; BI dashboards &middot; Chrome extensions &middot; JavaScript / TypeScript</p>
+            </article>
+
+            <article class="about-panel">
+              <h2>Currently focused on</h2>
+              <ul class="about-focus">
+                <li>Building small tools for product and analytics workflows</li>
+                <li>Improving Chrome extensions and utility apps</li>
+                <li>Turning product questions into measurable systems</li>
+              </ul>
+            </article>
+
+            <article class="about-panel">
+              <h2>Education</h2>
+              <p>Y-data School of Data Science (now Nebius Academy) and The Hebrew University of Jerusalem, with a foundation in data science methods, analytics, business strategy, and regional studies.</p>
+            </article>
           </div>
         </section>
 
@@ -1333,6 +1447,7 @@
             "href": "https://print-size-calculator.pages.dev/",
             "description": "A precise calculator for photographers, designers, and print teams planning physical output from digital images.",
             "detail": "It brings size, aspect ratio, resolution, and production-cost checks into one place, making it easier to compare options before sending work to print.",
+            "help": "Helps compare print size, resolution, aspect ratio, and cost before production.",
             "featured": true
           },
           {
@@ -1343,7 +1458,8 @@
             "visual": "thumb-mimi",
             "href": "https://chromewebstore.google.com/detail/mimis-tab-manager-chrome/idobmlmlfkmcjhojkeeihfgiaochcboc?authuser=0&hl=en-GB",
             "description": "A Chrome extension for turning crowded windows into searchable tab groups, saved sessions, and cleanup routines.",
-            "detail": "It is built for people who keep research, work, and admin contexts open at the same time and need a faster way back to the right tab set."
+            "detail": "It is built for people who keep research, work, and admin contexts open at the same time and need a faster way back to the right tab set.",
+            "help": "Helps people move back to the right tab session faster."
           },
           {
             "title": "Mixpanel Activity Navigator",
@@ -1353,7 +1469,8 @@
             "visual": "thumb-mixpanel",
             "href": "https://chromewebstore.google.com/detail/mixpanel-activity-navigat/njhkifoehgnmgmhlghgjlakohmkfdpan?authuser=0&hl=en-GB",
             "description": "A browser extension that speeds up Mixpanel investigations with event filtering and timeline navigation.",
-            "detail": "It supports the repetitive work of product analysis: scan user activity, keep key properties visible, and move through evidence without losing context."
+            "detail": "It supports the repetitive work of product analysis: scan user activity, keep key properties visible, and move through evidence without losing context.",
+            "help": "Helps analysts move through event trails without losing context."
           },
           {
             "title": "WhatsApp Reply Pal",
@@ -1363,7 +1480,8 @@
             "visual": "thumb-whatsapp",
             "href": "https://chromewebstore.google.com/detail/whatsapp-replypal/cmgbeceojeomlhcbljgepcjdjkoohgpe?authuser=0&hl=en-GB",
             "description": "A Chrome extension for drafting, reusing, and managing quick WhatsApp replies from the browser.",
-            "detail": "It is designed for repetitive messaging workflows where speed matters, but replies still need to stay consistent and easy to adjust."
+            "detail": "It is designed for repetitive messaging workflows where speed matters, but replies still need to stay consistent and easy to adjust.",
+            "help": "Helps repeat common replies without rewriting them each time."
           },
           {
             "title": "LingoLayer",
@@ -1373,7 +1491,8 @@
             "visual": "thumb-lingolayer",
             "href": "https://chromewebstore.google.com/detail/lingolayer/nnbmcomiclffbajkgkjgdjlfmjbedijg?utm_source=item-share-cb",
             "description": "A privacy-first Chrome extension that turns web pages into language-learning material locally in the browser.",
-            "detail": "It is designed for learners who want reading practice, vocabulary support, and page-level context without sending browsing content to a remote service."
+            "detail": "It is designed for learners who want reading practice, vocabulary support, and page-level context without sending browsing content to a remote service.",
+            "help": "Helps learners practice vocabulary directly on the page."
           },
           {
             "title": "Haiku Mania",
@@ -1383,7 +1502,8 @@
             "visual": "thumb-haiku",
             "href": "https://haiku-mania.pages.dev/",
             "description": "A quick creative game for generating haiku prompts, short poems, and playful writing constraints.",
-            "detail": "It keeps the interaction lightweight so the focus stays on fast creative output, short-form constraints, and the next line."
+            "detail": "It keeps the interaction lightweight so the focus stays on fast creative output, short-form constraints, and the next line.",
+            "help": "Helps people generate short, playful writing prompts quickly."
           }
         ]
       }
@@ -1514,30 +1634,38 @@
       <div class="contact-modal-panel">
         <div class="contact-modal-header">
           <h3 id="contact-modal-title">Contact</h3>
-          <button class="contact-modal-close" type="button" data-close-contact-modal aria-label="Close contact modal">x</button>
+          <button class="contact-modal-close" type="button" data-close-contact-modal aria-label="Close contact modal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M6 6l12 12"></path>
+              <path d="M18 6L6 18"></path>
+            </svg>
+          </button>
         </div>
         <div class="contact-modal-body">
-          <button class="contact-option" type="button" data-contact-kind="phone">
-            <span class="contact-option-primary">
-              <span class="contact-option-icon" aria-hidden="true">P</span>
-              <span class="contact-option-label">Phone</span>
-            </span>
-            <span class="contact-option-text" hidden>+972-546369842</span>
-          </button>
-          <button class="contact-option" type="button" data-contact-kind="email">
-            <span class="contact-option-primary">
-              <span class="contact-option-icon" aria-hidden="true">@</span>
-              <span class="contact-option-label">Email</span>
-            </span>
-            <span class="contact-option-text" hidden>EladWeller@gmail.com</span>
-          </button>
-          <a class="contact-option" href="https://www.linkedin.com/in/elad-weller/" target="_blank" rel="noreferrer" data-close-on-click>
-            <span class="contact-option-primary">
-              <span class="contact-option-icon" aria-hidden="true">in</span>
-              <span class="contact-option-label">LinkedIn</span>
-            </span>
-            <span class="contact-option-text">Open profile</span>
-          </a>
+          <p class="contact-modal-copy">Interested in product analytics, BI, or practical workflow tools? Get in touch.</p>
+          <div class="contact-links">
+            <a class="contact-option" href="mailto:EladWeller@gmail.com">
+              <span class="contact-option-primary">
+                <span class="contact-option-icon" aria-hidden="true">@</span>
+                <span class="contact-option-label">Email</span>
+              </span>
+              <span class="contact-option-text">EladWeller@gmail.com</span>
+            </a>
+            <a class="contact-option" href="https://www.linkedin.com/in/elad-weller/" target="_blank" rel="noreferrer" data-close-on-click>
+              <span class="contact-option-primary">
+                <span class="contact-option-icon" aria-hidden="true">in</span>
+                <span class="contact-option-label">LinkedIn</span>
+              </span>
+              <span class="contact-option-text">Open profile</span>
+            </a>
+            <a class="contact-option" href="tel:+972546369842">
+              <span class="contact-option-primary">
+                <span class="contact-option-icon" aria-hidden="true">P</span>
+                <span class="contact-option-label">Phone</span>
+              </span>
+              <span class="contact-option-text">+972-54-636-9842</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -1550,7 +1678,6 @@
       const modal = document.getElementById("contact-modal");
       const openers = Array.from(document.querySelectorAll("[data-open-contact-modal]"));
       const closers = Array.from(document.querySelectorAll("[data-close-contact-modal]"));
-      const contactOptions = Array.from(document.querySelectorAll("[data-contact-kind]"));
       const linkedInOption = modal.querySelector("[data-close-on-click]");
       const titleByView = {
         about: "Elad Weller - About",
@@ -1558,9 +1685,9 @@
         projects: "Elad Weller - Projects",
       };
       const descriptionByView = {
-        about: "About Elad Weller, builder of practical web tools, browser workflows, and product utilities.",
+        about: "About Elad Weller, who works across product analytics, BI, and practical workflow tools.",
         resume: "Resume for Elad Weller, with product data, analytics, and business intelligence experience.",
-        projects: "Projects by Elad Weller, featuring tools, browser extensions, and product utilities.",
+        projects: "Projects by Elad Weller, featuring practical tools, browser extensions, and lightweight web apps.",
       };
       let lastTrigger = null;
       let currentView = "projects";
@@ -1676,23 +1803,6 @@
         if (event.key === "Escape") {
           closeModal();
         }
-      });
-
-      contactOptions.forEach((button) => {
-        button.addEventListener("click", () => {
-          const primary = button.querySelector(".contact-option-primary");
-          const value = button.querySelector(".contact-option-text");
-
-          if (button.dataset.revealed === "true") {
-            if (button.dataset.contactKind === "phone" || button.dataset.contactKind === "email") {
-              return;
-            }
-          }
-
-          button.dataset.revealed = "true";
-          primary.hidden = true;
-          value.hidden = false;
-        });
       });
 
       if (linkedInOption) {
@@ -1880,6 +1990,7 @@
             <div class="project-body">
               <span class="category ${project.category}">${project.label || project.category}</span>
               <h3>${project.title}</h3>
+              <p class="project-note">${project.help || ""}</p>
             </div>
           </a>
         `;
