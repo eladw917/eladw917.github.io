@@ -695,43 +695,42 @@
 
       .skill-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        gap: 10px;
-        justify-content: flex-start;
+        gap: 16px;
       }
 
       .skill-group {
         display: flex;
         flex-direction: column;
-        gap: 8px;
-        padding: 12px 14px 14px;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: var(--surface-soft);
+        gap: 10px;
+        padding: 0;
+        border: 0;
+        background: transparent;
       }
 
       .skill-group-category {
         display: inline-flex;
-        width: fit-content;
         align-items: center;
-        padding: 4px 8px;
-        border-radius: 999px;
-        background: #eaf1ff;
-        color: var(--blue);
-        font-size: 11px;
+        padding: 0;
+        color: var(--ink);
+        font-size: 15px;
         font-weight: 800;
-        text-transform: capitalize;
-        letter-spacing: 0.01em;
+        letter-spacing: 0;
       }
 
-      .skill-group strong {
-        display: block;
-        font-size: 15px;
-        line-height: 1.3;
+      .skill-pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .skill-pill {
+        min-height: 30px;
+        padding: 5px 10px;
+        font-size: 13px;
       }
 
       .skill-group-note {
-        min-height: 34px;
+        min-height: 0;
         margin: 0;
         color: var(--muted);
         font-size: 12px;
@@ -1684,20 +1683,20 @@
             ]
           }
         ],
-        "skills": [
-          {
-            "title": "Data Analysis",
-            "value": "SQL, Python, spatial and geographical data analysis, machine learning"
-          },
-          {
-            "title": "BI Tools",
-            "value": "Looker, Tableau, Looker Studio, Streamlit, Amplitude"
-          },
-          {
-            "title": "Big Data",
-            "value": "PySpark, BigQuery, Athena, Airflow, Jenkins, ETL"
-          }
-        ],
+      "skills": [
+        {
+          "title": "Data Analysis",
+          "items": ["SQL", "Python", "Spatial and geographical data analysis", "Machine learning"]
+        },
+        {
+          "title": "BI Tools",
+          "items": ["Looker", "Tableau", "Looker Studio", "Streamlit", "Amplitude"]
+        },
+        {
+          "title": "Data Infrastructure",
+          "items": ["PySpark", "BigQuery", "Athena", "Airflow", "Jenkins", "ETL"]
+        }
+      ],
         "education": [
           {
             "period": "2020 - 2021",
@@ -1990,17 +1989,24 @@
       function renderResumeSkills() {
         const skillGrid = document.getElementById("resume-skills");
 
-        skillGrid.replaceChildren(...resumeSkills.flatMap((skill) => {
-          return skill.value.split(",").map((value) => {
-            const card = document.createElement("div");
-            card.className = "skill-group";
-            card.innerHTML = `
-              <span class="skill-group-category">${skill.title}</span>
-              <strong>${value.trim()}</strong>
-              <p class="skill-group-note"></p>
-            `;
-            return card;
-          });
+        skillGrid.replaceChildren(...resumeSkills.map((skill) => {
+          const group = document.createElement("section");
+          group.className = "skill-group";
+          const items = skill.items || (skill.value || "").split(",").map((value) => value.trim()).filter(Boolean);
+          group.innerHTML = `
+            <h4 class="skill-group-category">${skill.title}</h4>
+            <div class="skill-pill-row" aria-label="${skill.title} skills"></div>
+          `;
+
+          const pillRow = group.querySelector(".skill-pill-row");
+          pillRow.replaceChildren(...items.map((itemText) => {
+            const pill = document.createElement("span");
+            pill.className = "tag skill-pill";
+            pill.textContent = itemText;
+            return pill;
+          }));
+
+          return group;
         }));
       }
 

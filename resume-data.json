@@ -88,15 +88,15 @@
   "skills": [
     {
       "title": "Data Analysis",
-      "value": "SQL, Python, spatial and geographical data analysis, machine learning"
+      "items": ["SQL", "Python", "Spatial and geographical data analysis", "Machine learning"]
     },
     {
       "title": "BI Tools",
-      "value": "Looker, Tableau, Looker Studio, Streamlit, Amplitude"
+      "items": ["Looker", "Tableau", "Looker Studio", "Streamlit", "Amplitude"]
     },
     {
-      "title": "Big Data",
-      "value": "PySpark, BigQuery, Athena, Airflow, Jenkins, ETL"
+      "title": "Data Infrastructure",
+      "items": ["PySpark", "BigQuery", "Athena", "Airflow", "Jenkins", "ETL"]
     }
   ],
   "education": [
