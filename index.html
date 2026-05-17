@@ -425,9 +425,17 @@
       }
 
       .resume-tech-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
+        display: block;
+        margin: 0;
+        padding-left: 20px;
+      }
+
+      .resume-tech-row li::marker {
+        color: var(--blue);
+      }
+
+      .resume-tech-row li + li {
+        margin-top: 4px;
       }
 
       .resume-featured .tag-row {
@@ -1492,7 +1500,7 @@
             <div class="tag-row" data-resume-tags aria-label="Resume tags"></div>
             <div class="resume-tech-stack">
               <h3>Technical Stack</h3>
-              <div class="resume-tech-row" data-resume-stack aria-label="Technical stack"></div>
+              <ul class="experience-bullets resume-tech-row" data-resume-stack aria-label="Technical stack"></ul>
             </div>
             <div class="resume-key-work">
               <h3>Key work</h3>
@@ -1942,8 +1950,7 @@
         }));
 
         resumeStack.replaceChildren(...(entry.technicalStack || []).map((itemText) => {
-          const item = document.createElement("span");
-          item.className = "tag";
+          const item = document.createElement("li");
           item.textContent = itemText;
           return item;
         }));
