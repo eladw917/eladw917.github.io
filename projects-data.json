@@ -1,0 +1,65 @@
+{
+  "projects": [
+    {
+      "title": "Print Size Calculator",
+      "category": "tool",
+      "label": "Tool",
+      "year": "2026",
+      "visual": "thumb-print",
+      "href": "https://print-size-calculator.pages.dev/",
+      "description": "A precise calculator for photographers, designers, and print teams planning physical output from digital images.",
+      "detail": "It brings size, aspect ratio, resolution, and production-cost checks into one place, making it easier to compare options before sending work to print.",
+      "featured": true
+    },
+    {
+      "title": "Mimi's Tab Manager",
+      "category": "chrome-extension",
+      "label": "Chrome Extension",
+      "year": "2025",
+      "visual": "thumb-mimi",
+      "href": "https://chromewebstore.google.com/detail/mimis-tab-manager-chrome/idobmlmlfkmcjhojkeeihfgiaochcboc?authuser=0&hl=en-GB",
+      "description": "A Chrome extension for turning crowded windows into searchable tab groups, saved sessions, and cleanup routines.",
+      "detail": "It is built for people who keep research, work, and admin contexts open at the same time and need a faster way back to the right tab set."
+    },
+    {
+      "title": "Mixpanel Activity Navigator",
+      "category": "chrome-extension",
+      "label": "Chrome Extension",
+      "year": "2025",
+      "visual": "thumb-mixpanel",
+      "href": "https://chromewebstore.google.com/detail/mixpanel-activity-navigat/njhkifoehgnmgmhlghgjlakohmkfdpan?authuser=0&hl=en-GB",
+      "description": "A browser extension that speeds up Mixpanel investigations with event filtering and timeline navigation.",
+      "detail": "It supports the repetitive work of product analysis: scan user activity, keep key properties visible, and move through evidence without losing context."
+    },
+    {
+      "title": "WhatsApp Reply Pal",
+      "category": "chrome-extension",
+      "label": "Chrome Extension",
+      "year": "2025",
+      "visual": "thumb-whatsapp",
+      "href": "https://chromewebstore.google.com/detail/whatsapp-replypal/cmgbeceojeomlhcbljgepcjdjkoohgpe?authuser=0&hl=en-GB",
+      "description": "A Chrome extension for drafting, reusing, and managing quick WhatsApp replies from the browser.",
+      "detail": "It is designed for repetitive messaging workflows where speed matters, but replies still need to stay consistent and easy to adjust."
+    },
+    {
+      "title": "LingoLayer",
+      "category": "chrome-extension",
+      "label": "Chrome Extension",
+      "year": "2026",
+      "visual": "thumb-lingolayer",
+      "href": "https://chromewebstore.google.com/detail/lingolayer/nnbmcomiclffbajkgkjgdjlfmjbedijg?utm_source=item-share-cb",
+      "description": "A privacy-first Chrome extension that turns web pages into language-learning material locally in the browser.",
+      "detail": "It is designed for learners who want reading practice, vocabulary support, and page-level context without sending browsing content to a remote service."
+    },
+    {
+      "title": "Haiku Mania",
+      "category": "game",
+      "label": "Game",
+      "year": "2026",
+      "visual": "thumb-haiku",
+      "href": "https://haiku-mania.pages.dev/",
+      "description": "A quick creative game for generating haiku prompts, short poems, and playful writing constraints.",
+      "detail": "It keeps the interaction lightweight so the focus stays on fast creative output, short-form constraints, and the next line."
+    }
+  ]
+}
