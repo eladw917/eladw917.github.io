@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Projects and about page for Elad Weller, featuring tools, browser extensions, and product utilities.">
+    <meta name="description" content="Projects, games, Chrome extensions, and product analytics work by Elad Weller.">
     <title>Elad Weller - Projects</title>
     <style>
       :root {
@@ -734,94 +734,6 @@
         color: var(--blue);
       }
 
-      .browser-frame {
-        position: absolute;
-        inset: 54px 36px 34px 58px;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-radius: 8px;
-        background: rgba(4, 10, 18, 0.92);
-        box-shadow: 0 24px 44px rgba(0, 0, 0, 0.35);
-      }
-
-      .browser-dots {
-        position: absolute;
-        left: 14px;
-        top: 12px;
-        display: flex;
-        gap: 5px;
-      }
-
-      .browser-dots span {
-        width: 5px;
-        height: 5px;
-        border-radius: 50%;
-        background: #ff6159;
-      }
-
-      .browser-dots span:nth-child(2) {
-        background: #ffbd2f;
-      }
-
-      .browser-dots span:nth-child(3) {
-        background: #29cc42;
-      }
-
-      .feature-bg {
-        position: absolute;
-        inset: 0;
-        background:
-          radial-gradient(circle at 65% 30%, rgba(9, 105, 246, 0.78), transparent 26%),
-          radial-gradient(circle at 78% 70%, rgba(124, 63, 242, 0.3), transparent 25%),
-          linear-gradient(135deg, #020814, #061526 45%, #07101d);
-      }
-
-      .side-rail {
-        position: absolute;
-        left: 14px;
-        top: 38px;
-        bottom: 14px;
-        width: 36px;
-        border-right: 1px solid rgba(255, 255, 255, 0.08);
-      }
-
-      .side-rail i {
-        display: block;
-        width: 8px;
-        height: 8px;
-        margin: 14px auto;
-        border-radius: 50%;
-        background: rgba(75, 150, 255, 0.55);
-      }
-
-      .focus-ring {
-        position: absolute;
-        left: 126px;
-        top: 68px;
-        width: 92px;
-        height: 92px;
-        border-radius: 50%;
-        border: 4px solid #0597ff;
-        display: grid;
-        place-items: center;
-        color: white;
-        font-size: 22px;
-        box-shadow: 0 0 42px rgba(0, 153, 255, 0.35);
-      }
-
-      .mini-chart {
-        position: absolute;
-        right: 24px;
-        bottom: 30px;
-        width: 92px;
-        height: 82px;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 6px;
-        background:
-          linear-gradient(to top, rgba(9, 105, 246, 0.24) 0 36%, transparent 36%),
-          linear-gradient(155deg, transparent 45%, rgba(71, 207, 135, 0.75) 46% 48%, transparent 49%),
-          rgba(255, 255, 255, 0.03);
-      }
-
       .featured h2 {
         margin: 18px 0 8px;
         font-size: 28px;
@@ -836,12 +748,12 @@
 
       .featured-description {
         max-width: 58ch;
-        margin: 0 auto;
+        margin: 0;
       }
 
       .featured-detail {
         max-width: 60ch;
-        margin: 8px auto 0;
+        margin: 8px 0 0;
         color: color-mix(in srgb, var(--ink) 84%, var(--muted));
       }
 
@@ -907,8 +819,7 @@
         gap: 12px;
       }
 
-      .filter-button,
-      .sort-select {
+      .filter-button {
         min-height: 42px;
         border: 1px solid var(--line);
         border-radius: 999px;
@@ -981,16 +892,6 @@
         background: color-mix(in srgb, var(--blue) 12%, var(--surface));
       }
 
-      .category.design {
-        color: var(--violet);
-        background: color-mix(in srgb, var(--violet) 12%, var(--surface));
-      }
-
-      .category.utility {
-        color: var(--green);
-        background: color-mix(in srgb, var(--green) 13%, var(--surface));
-      }
-
       .category.tool {
         color: var(--blue);
         background: color-mix(in srgb, var(--blue) 12%, var(--surface));
@@ -1015,17 +916,6 @@
       .project-card p {
         margin: 0;
         min-height: 63px;
-      }
-
-      .project-card .tag-row {
-        margin: 16px 0 0;
-        gap: 7px;
-      }
-
-      .project-card .tag {
-        min-height: 24px;
-        padding: 3px 8px;
-        font-size: 12px;
       }
 
       .thumb-print {
@@ -1057,6 +947,21 @@
         color: #07111f;
         font-size: 26px;
         font-weight: 850;
+      }
+
+      .featured-visual.thumb-print::before {
+        left: 50%;
+        top: 50%;
+        width: 96px;
+        height: 96px;
+        transform: translate(-102%, -50%);
+      }
+
+      .featured-visual.thumb-print::after {
+        left: 50%;
+        right: auto;
+        top: 50%;
+        transform: translate(12%, -50%);
       }
 
       .thumb-store {
@@ -1286,18 +1191,6 @@
           font-size: 44px;
         }
 
-        .browser-frame {
-          inset: 42px 20px 28px;
-        }
-
-        .focus-ring {
-          left: 86px;
-        }
-
-        .mini-chart {
-          right: 16px;
-        }
-
         .project-grid {
           grid-template-columns: 1fr;
         }
@@ -1338,15 +1231,15 @@
           <div class="hero-intro">
             <p class="eyebrow">Projects</p>
             <h1>Personal Project Index</h1>
-            <p class="hero-copy">A collection of tools, browser extensions, and product utilities I am building in public.</p>
+            <p class="hero-copy">A focused index of small products I build to solve real workflow problems: practical web tools, Chrome extensions, and lightweight games.</p>
           </div>
         </section>
 
         <section class="featured page-shell" aria-labelledby="featured-title">
           <div class="featured-content">
             <h2 id="featured-title" data-featured-title>Print Size Calculator</h2>
-            <p class="featured-description" data-featured-description>A precise web utility for photographers, designers, and print professionals calculating sizes, resolution, aspect ratios, and costs.</p>
-            <p class="featured-detail" data-featured-detail>Built to answer production questions quickly, it turns print sizing into something easy to compare, tune, and hand off.</p>
+            <p class="featured-description" data-featured-description>A precise calculator for photographers, designers, and print teams planning physical output from digital images.</p>
+            <p class="featured-detail" data-featured-detail>It brings size, aspect ratio, resolution, and production-cost checks into one place, making it easier to compare options before sending work to print.</p>
           </div>
           <a class="featured-visual thumb-print" data-featured-visual href="https://print-size-calculator.pages.dev/" target="_blank" rel="noreferrer" aria-label="Open featured project">
             <span class="featured-link-badge" aria-hidden="true">
@@ -1376,7 +1269,7 @@
                 <div class="project-body">
                   <span class="category tool">Tool</span>
                   <h3>Print Size Calculator</h3>
-                  <p>Calculate print sizes, resolutions, aspect ratios, and production costs.</p>
+                  <p>Plan physical prints from digital images with size, resolution, aspect ratio, and cost checks in one flow.</p>
                 </div>
               </a>
             </article>
@@ -1387,7 +1280,7 @@
                 <div class="project-body">
                   <span class="category chrome-extension">Chrome Extension</span>
                   <h3>Mimi's Tab Manager</h3>
-                  <p>Organize browser tabs with grouping, sessions, search, and cleanup flows.</p>
+                  <p>Turn crowded Chrome windows into searchable tab groups, saved sessions, and faster cleanup routines.</p>
                 </div>
               </a>
             </article>
@@ -1398,7 +1291,7 @@
                 <div class="project-body">
                   <span class="category chrome-extension">Chrome Extension</span>
                   <h3>Mixpanel Activity Navigator</h3>
-                  <p>Filter events, track properties, and move through user timelines faster.</p>
+                  <p>Speed up Mixpanel user investigations with event filtering, property tracking, and faster timeline navigation.</p>
                 </div>
               </a>
             </article>
@@ -1408,7 +1301,7 @@
                 <div class="project-body">
                   <span class="category chrome-extension">Chrome Extension</span>
                   <h3>WhatsApp Reply Pal</h3>
-                  <p>A Chrome extension for drafting and managing quick WhatsApp replies.</p>
+                  <p>Draft, reuse, and manage quick WhatsApp replies directly from the browser for repetitive messaging work.</p>
                 </div>
               </a>
             </article>
@@ -1418,7 +1311,7 @@
                 <div class="project-body">
                   <span class="category game">Game</span>
                   <h3>Haiku Mania</h3>
-                  <p>A playful haiku experiment for creating short poems and quick creative prompts.</p>
+                  <p>A quick creative game for generating haiku prompts, short poems, and playful writing constraints.</p>
                 </div>
               </a>
             </article>
@@ -1431,7 +1324,7 @@
           <div class="hero-intro">
             <p class="eyebrow">About</p>
             <h1>Hey, I am Elad.</h1>
-            <p class="hero-copy">I work across product analytics, data science, and BI to support product decisions, design experiments, and improve AI and data products.</p>
+            <p class="hero-copy">I work across product analytics, data science, and BI, translating messy product questions into event design, experiments, dashboards, and decisions teams can act on.</p>
           </div>
         </section>
 
@@ -1793,48 +1686,38 @@
       const featuredProjects = [
         {
           title: "Print Size Calculator",
-          meta: "tool · 2026",
           visual: "thumb-print",
-          description: "A precise web utility for photographers, designers, and print professionals calculating sizes, resolution, aspect ratios, and costs.",
-          detail: "Built to answer production questions quickly, it turns print sizing into something easy to compare, tune, and hand off.",
-          href: "https://print-size-calculator.pages.dev/",
-          tags: ["React", "TypeScript", "Calculators", "Photography"]
+          description: "A precise calculator for photographers, designers, and print teams planning physical output from digital images.",
+          detail: "It brings size, aspect ratio, resolution, and production-cost checks into one place, making it easier to compare options before sending work to print.",
+          href: "https://print-size-calculator.pages.dev/"
         },
         {
           title: "Mimi's Tab Manager",
-          meta: "Chrome Extension · 2025",
           visual: "thumb-mimi",
-          description: "A Chrome extension for organizing browser tabs with grouping, sessions, search, and cleanup flows.",
-          detail: "It keeps large browsing sessions manageable by making tab cleanup and recovery feel deliberate instead of chaotic.",
-          href: "https://chromewebstore.google.com/detail/mimis-tab-manager-chrome/idobmlmlfkmcjhojkeeihfgiaochcboc?authuser=0&hl=en-GB",
-          tags: ["Chrome", "Tabs API", "Productivity"]
+          description: "A Chrome extension for turning crowded windows into searchable tab groups, saved sessions, and cleanup routines.",
+          detail: "It is built for people who keep research, work, and admin contexts open at the same time and need a faster way back to the right tab set.",
+          href: "https://chromewebstore.google.com/detail/mimis-tab-manager-chrome/idobmlmlfkmcjhojkeeihfgiaochcboc?authuser=0&hl=en-GB"
         },
         {
           title: "Mixpanel Activity Navigator",
-          meta: "Chrome Extension · 2025",
           visual: "thumb-mixpanel",
-          description: "A browser extension that helps teams filter events, track properties, and move through Mixpanel user timelines faster.",
-          detail: "It is tuned for analytics workflows where fast filtering and property inspection save time on every investigation.",
-          href: "https://chromewebstore.google.com/detail/mixpanel-activity-navigat/njhkifoehgnmgmhlghgjlakohmkfdpan?authuser=0&hl=en-GB",
-          tags: ["JavaScript", "Analytics", "Chrome"]
+          description: "A browser extension that speeds up Mixpanel investigations with event filtering and timeline navigation.",
+          detail: "It supports the repetitive work of product analysis: scan user activity, keep key properties visible, and move through evidence without losing context.",
+          href: "https://chromewebstore.google.com/detail/mixpanel-activity-navigat/njhkifoehgnmgmhlghgjlakohmkfdpan?authuser=0&hl=en-GB"
         },
         {
           title: "WhatsApp Reply Pal",
-          meta: "Chrome Extension · 2025",
           visual: "thumb-whatsapp",
-          description: "A Chrome extension for drafting and managing quick WhatsApp replies.",
-          detail: "It is designed for fast message drafting, so routine replies stay organized without leaving the conversation flow.",
-          href: "https://chromewebstore.google.com/detail/whatsapp-replypal/cmgbeceojeomlhcbljgepcjdjkoohgpe?authuser=0&hl=en-GB",
-          tags: ["Chrome", "Messaging", "Productivity"]
+          description: "A Chrome extension for drafting, reusing, and managing quick WhatsApp replies from the browser.",
+          detail: "It is designed for repetitive messaging workflows where speed matters, but replies still need to stay consistent and easy to adjust.",
+          href: "https://chromewebstore.google.com/detail/whatsapp-replypal/cmgbeceojeomlhcbljgepcjdjkoohgpe?authuser=0&hl=en-GB"
         },
         {
           title: "Haiku Mania",
-          meta: "Game · 2026",
           visual: "thumb-haiku",
-          description: "A playful haiku experiment for creating short poems and quick creative prompts.",
-          detail: "It is intentionally lightweight, keeping the writing flow focused on quick prompts and compact creative output.",
-          href: "https://haiku-mania.pages.dev/",
-          tags: ["Creative Coding", "Poetry", "Experiment"]
+          description: "A quick creative game for generating haiku prompts, short poems, and playful writing constraints.",
+          detail: "It keeps the interaction lightweight so the focus stays on fast creative output, short-form constraints, and the next line.",
+          href: "https://haiku-mania.pages.dev/"
         }
       ];
 
@@ -2003,6 +1886,7 @@
 
         featuredVisual.className = `featured-visual ${project.visual}`;
         featuredVisual.href = project.href;
+        featuredVisual.setAttribute("aria-label", `Open ${project.title}`);
         featuredTitle.textContent = project.title;
         featuredDescription.textContent = project.description;
         featuredDetail.textContent = project.detail;
