@@ -319,27 +319,110 @@
       .resume-featured {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 22px;
-        width: min(880px, calc(100% - 32px));
+        align-items: stretch;
+        width: min(1110px, calc(100% - 32px));
         margin: 8px auto 34px;
         padding: 14px;
         border: 1px solid var(--line);
         border-radius: var(--radius);
         background: var(--surface);
         box-shadow: var(--shadow);
-        text-align: center;
-      }
-
-      .resume-featured-bullets {
-        max-width: 100%;
-        margin-top: 18px;
         text-align: left;
       }
 
+      .resume-featured-card {
+        width: 100%;
+        display: grid;
+        gap: 14px;
+        padding: 10px 12px 12px;
+      }
+
+      .resume-featured-header {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: 18px;
+      }
+
+      .resume-featured-title {
+        margin: 0;
+        font-size: clamp(30px, 4vw, 38px);
+        line-height: 1.05;
+      }
+
+      .resume-role-line {
+        margin: 8px 0 0;
+        color: var(--muted);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+      }
+
+      .resume-date {
+        display: inline-flex;
+        align-items: center;
+        min-height: 30px;
+        padding: 5px 12px;
+        border-radius: 7px;
+        background: color-mix(in srgb, var(--green) 13%, var(--surface));
+        color: var(--green);
+        font-size: 14px;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .resume-summary {
+        margin: 0;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.55;
+      }
+
+      .resume-featured-bullets {
+        margin-top: 0;
+        padding-left: 20px;
+      }
+
+      .resume-featured-bullets li::marker {
+        color: var(--blue);
+      }
+
+      .resume-key-work {
+        display: grid;
+        gap: 10px;
+        width: 100%;
+      }
+
+      .resume-key-work h3 {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.2;
+        color: var(--ink);
+      }
+
+      .resume-tech-stack {
+        display: grid;
+        gap: 10px;
+        width: 100%;
+      }
+
+      .resume-tech-stack h3 {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.2;
+        color: var(--ink);
+      }
+
+      .resume-tech-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
       .resume-featured .tag-row {
-        justify-content: center;
-        margin-top: 14px;
+        justify-content: flex-start;
+        margin: 0;
+        width: 100%;
       }
 
       .resume-entry-card .tag-row {
@@ -851,33 +934,6 @@
         font-weight: 600;
       }
 
-      .status {
-        display: inline-flex;
-        align-items: center;
-        gap: 7px;
-        min-height: 30px;
-        padding: 5px 12px;
-        border-radius: 7px;
-        background: color-mix(in srgb, var(--green) 13%, var(--surface));
-        color: var(--green);
-        font-size: 14px;
-        font-weight: 800;
-      }
-
-      .status::before {
-        content: "";
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: currentColor;
-      }
-
-      .divider {
-        width: 1px;
-        height: 24px;
-        background: var(--line);
-      }
-
       .toolbar {
         display: flex;
         align-items: center;
@@ -1227,6 +1283,11 @@
           min-height: 220px;
         }
 
+        .resume-featured-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
         .toolbar {
           align-items: flex-start;
           flex-direction: column;
@@ -1402,16 +1463,24 @@
 
       <section class="page-view" data-view="resume" id="resume" hidden>
         <section class="featured page-shell resume-featured" aria-labelledby="resume-featured-title">
-          <div class="featured-content">
-            <h2 id="resume-featured-title" data-resume-title></h2>
-            <p data-resume-description></p>
-            <div class="tag-row" data-resume-tags aria-label="Resume tags"></div>
-            <div class="project-actions">
-              <span class="status" data-resume-period></span>
-              <span class="divider" aria-hidden="true"></span>
-              <span class="text-link" data-resume-company></span>
+          <div class="resume-featured-card">
+            <div class="resume-featured-header">
+              <div>
+                <h2 id="resume-featured-title" class="resume-featured-title" data-resume-title></h2>
+                <p class="resume-role-line" data-resume-role></p>
+              </div>
+              <span class="resume-date" data-resume-period></span>
             </div>
-            <ul class="experience-bullets resume-featured-bullets" data-resume-bullets></ul>
+            <p class="resume-summary" data-resume-description></p>
+            <div class="tag-row" data-resume-tags aria-label="Resume tags"></div>
+            <div class="resume-tech-stack">
+              <h3>Technical Stack</h3>
+              <div class="resume-tech-row" data-resume-stack aria-label="Technical stack"></div>
+            </div>
+            <div class="resume-key-work">
+              <h3>Key work</h3>
+              <ul class="experience-bullets resume-featured-bullets" data-resume-bullets></ul>
+            </div>
           </div>
         </section>
 
@@ -1518,6 +1587,7 @@
             "company": "Hello Heart",
             "role": "Product Data Analyst",
             "tags": ["Med Tech", "A/B Testing", "B2C", "B2B"],
+            "technicalStack": ["SQL", "Python", "Airflow", "Looker", "Amplitude", "Event design"],
             "summary": "Embedded in the clinical-product squad, supporting the full product lifecycle across research, event design, and post-launch measurement.",
             "bullets": [
               "Embedded in the clinical-product squad, supporting the full product lifecycle from preliminary research and event-spec/database design through post-launch analyses and A/B testing for continuous improvement.",
@@ -1531,6 +1601,7 @@
             "company": "Wordtune (by AI21Labs)",
             "role": "Product Data Scientist",
             "tags": ["AI Products", "A/B Testing", "Growth", "B2C"],
+            "technicalStack": ["SQL", "Python", "Airflow", "Looker", "Amplitude", "Jamba"],
             "summary": "Shipped new features with product, defined measurement frameworks, and supported A/B testing and AI deployment work.",
             "bullets": [
               "Worked closely with the product team to create new features, defining analytics events, product KPIs, and monitoring frameworks while conducting deep-dive analyses on growth opportunities and user behavior.",
@@ -1545,6 +1616,7 @@
             "company": "Placer.ai",
             "role": "Senior Data Analyst (Data Science)",
             "tags": ["Data Science", "B2B", "Spatial Data"],
+            "technicalStack": ["SQL", "Python", "PySpark", "BigQuery", "Tableau", "Streamlit"],
             "summary": "Built data products, production pipelines, and internal tools that supported platform and customer-facing analysis.",
             "bullets": [
               "Created new data products, including visualization and new metrics for the Placer.ai platform and customers, using SQL and Tableau.",
@@ -1560,6 +1632,7 @@
             "company": "Appsflyer",
             "role": "Senior Product Data Analyst",
             "tags": ["B2B", "Large Scale Data", "Ad-Tech"],
+            "technicalStack": ["SQL", "Python", "Airflow", "Looker", "BigQuery", "ML monitoring"],
             "summary": "Owned product monitoring and ML model workflows for new product deployment and customer-facing insights.",
             "bullets": [
               "Worked together with Product and R&D teams, defining and creating monitoring for the deployment of new products.",
@@ -1569,14 +1642,15 @@
           },
           {
             "key": "appsflyer-junior",
-            "period": "2020 - Nov 2022",
+            "period": "Nov 2020 - Nov 2022",
             "company": "Appsflyer",
             "role": "Product Data Analyst",
-            "tags": ["B2B", "Large Scale Data", "Ad-Tech"],
-            "summary": "Built reporting, forecasting, and alerting systems to keep product data reliable and useful.",
+            "tags": ["B2B", "Large-scale data", "Ad tech"],
+            "technicalStack": ["SQL", "Python", "Looker", "Tableau", "Airflow", "ETL"],
+            "summary": "Built reporting, forecasting, and alerting systems that kept product data reliable, observable, and useful for internal teams.",
             "bullets": [
-              "Built ETL processes and dashboards for non-data personnel.",
-              "Created time-series forecasting and alerting tools for monitoring abnormal data patterns."
+              "Built ETL workflows and dashboards that let non-data teams monitor product metrics independently.",
+              "Created forecasting and anomaly-alerting tools to detect abnormal data patterns early."
             ]
           },
           {
@@ -1585,6 +1659,7 @@
             "company": "Ministry of Finance",
             "role": "Economic Researcher, Foreign Investment Division",
             "tags": ["Research", "Government", "Policy"],
+            "technicalStack": ["Research analysis", "Excel", "SQL", "Python", "Reporting"],
             "summary": "Worked on economic research and analysis in the Foreign Investment Division.",
             "bullets": [
               "Worked in the Foreign Investment Division on economic research and analysis."
@@ -1819,10 +1894,11 @@
 
       const resumeFeatured = document.querySelector(".resume-featured");
       const resumeTitle = document.querySelector("[data-resume-title]");
+      const resumeRole = document.querySelector("[data-resume-role]");
       const resumeDescription = document.querySelector("[data-resume-description]");
       const resumeTags = document.querySelector("[data-resume-tags]");
+      const resumeStack = document.querySelector("[data-resume-stack]");
       const resumePeriod = document.querySelector("[data-resume-period]");
-      const resumeCompany = document.querySelector("[data-resume-company]");
       const resumeBullets = document.querySelector("[data-resume-bullets]");
       const resumeGrid = document.getElementById("resume-grid");
       const resumeDataUrl = new URL("resume-data.json", document.baseURI);
@@ -1837,14 +1913,21 @@
         }
 
         resumeTitle.textContent = entry.company;
-        resumeDescription.textContent = `${entry.role}. ${entry.summary}`;
-        resumePeriod.textContent = entry.period;
-        resumeCompany.textContent = entry.role;
+        resumeRole.textContent = entry.role;
+        resumeDescription.textContent = entry.summary;
+        resumePeriod.textContent = entry.period.replace(" - ", "–");
 
         resumeTags.replaceChildren(...(entry.tags || []).map((tag) => {
           const item = document.createElement("span");
           item.className = "tag";
           item.textContent = tag;
+          return item;
+        }));
+
+        resumeStack.replaceChildren(...(entry.technicalStack || []).map((itemText) => {
+          const item = document.createElement("span");
+          item.className = "tag";
+          item.textContent = itemText;
           return item;
         }));
 
@@ -2066,12 +2149,6 @@
         });
       });
 
-      grid.addEventListener("pointerleave", () => setFeaturedProject(defaultFeaturedProject));
-      grid.addEventListener("focusout", (event) => {
-        if (!grid.contains(event.relatedTarget)) {
-          setFeaturedProject(defaultFeaturedProject);
-        }
-      });
       syncView(getRequestedView(), {pushState: false});
       loadProjectData().catch((error) => {
         console.error(error);

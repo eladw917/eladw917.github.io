@@ -6,6 +6,7 @@
       "company": "Hello Heart",
       "role": "Product Data Analyst",
       "tags": ["Med Tech", "A/B Testing", "B2C", "B2B"],
+      "technicalStack": ["SQL", "Python", "Airflow", "Looker", "Amplitude", "Event design"],
       "summary": "Embedded in the clinical-product squad, supporting the full product lifecycle across research, event design, and post-launch measurement.",
       "bullets": [
         "Embedded in the clinical-product squad, supporting the full product lifecycle from preliminary research and event-spec/database design through post-launch analyses and A/B testing for continuous improvement.",
@@ -19,6 +20,7 @@
       "company": "Wordtune (by AI21Labs)",
       "role": "Product Data Scientist",
       "tags": ["AI Products", "A/B Testing", "Growth", "B2C"],
+      "technicalStack": ["SQL", "Python", "Airflow", "Looker", "Amplitude", "Jamba"],
       "summary": "Shipped new features with product, defined measurement frameworks, and supported A/B testing and AI deployment work.",
       "bullets": [
         "Worked closely with the product team to create new features, defining analytics events, product KPIs, and monitoring frameworks while conducting deep-dive analyses on growth opportunities and user behavior.",
@@ -33,6 +35,7 @@
       "company": "Placer.ai",
       "role": "Senior Data Analyst (Data Science)",
       "tags": ["Data Science", "B2B", "Spatial Data"],
+      "technicalStack": ["SQL", "Python", "PySpark", "BigQuery", "Tableau", "Streamlit"],
       "summary": "Built data products, production pipelines, and internal tools that supported platform and customer-facing analysis.",
       "bullets": [
         "Created new data products, including visualization and new metrics for the Placer.ai platform and customers, using SQL and Tableau.",
@@ -48,6 +51,7 @@
       "company": "Appsflyer",
       "role": "Senior Product Data Analyst",
       "tags": ["B2B", "Large Scale Data", "Ad-Tech"],
+      "technicalStack": ["SQL", "Python", "Airflow", "Looker", "BigQuery", "ML monitoring"],
       "summary": "Owned product monitoring and ML model workflows for new product deployment and customer-facing insights.",
       "bullets": [
         "Worked together with Product and R&D teams, defining and creating monitoring for the deployment of new products.",
@@ -57,14 +61,15 @@
     },
     {
       "key": "appsflyer-junior",
-      "period": "2020 - Nov 2022",
+      "period": "Nov 2020 - Nov 2022",
       "company": "Appsflyer",
       "role": "Product Data Analyst",
-      "tags": ["B2B", "Large Scale Data", "Ad-Tech"],
-      "summary": "Built reporting, forecasting, and alerting systems to keep product data reliable and useful.",
+      "tags": ["B2B", "Large-scale data", "Ad tech"],
+      "technicalStack": ["SQL", "Python", "Looker", "Tableau", "Airflow", "ETL"],
+      "summary": "Built reporting, forecasting, and alerting systems that kept product data reliable, observable, and useful for internal teams.",
       "bullets": [
-        "Built ETL processes and dashboards for non-data personnel.",
-        "Created time-series forecasting and alerting tools for monitoring abnormal data patterns."
+        "Built ETL workflows and dashboards that let non-data teams monitor product metrics independently.",
+        "Created forecasting and anomaly-alerting tools to detect abnormal data patterns early."
       ]
     },
     {
@@ -73,6 +78,7 @@
       "company": "Ministry of Finance",
       "role": "Economic Researcher",
       "tags": ["Research", "Government", "Policy"],
+      "technicalStack": ["Research analysis", "Excel", "SQL", "Python", "Reporting"],
       "summary": "Worked on economic research and analysis in the Foreign Investment Division.",
       "bullets": [
         "Worked in the Foreign Investment Division on economic research and analysis."
