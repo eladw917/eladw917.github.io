@@ -320,7 +320,7 @@
         display: flex;
         flex-direction: column;
         align-items: stretch;
-        width: min(1110px, calc(100% - 32px));
+        width: min(1200px, calc(100% - 24px));
         margin: 8px auto 34px;
         padding: 14px;
         border: 1px solid var(--line);
@@ -337,11 +337,20 @@
         padding: 10px 12px 12px;
       }
 
+      .resume-featured-card > * {
+        width: 100%;
+      }
+
       .resume-featured-header {
         display: flex;
         align-items: start;
         justify-content: space-between;
         gap: 18px;
+      }
+
+      .resume-featured-header > div {
+        flex: 1 1 auto;
+        min-width: 0;
       }
 
       .resume-featured-title {
@@ -361,6 +370,7 @@
       .resume-date {
         display: inline-flex;
         align-items: center;
+        align-self: start;
         min-height: 30px;
         padding: 5px 12px;
         border-radius: 7px;
@@ -373,6 +383,7 @@
 
       .resume-summary {
         margin: 0;
+        width: 100%;
         color: var(--muted);
         font-size: 18px;
         line-height: 1.55;
