@@ -1037,6 +1037,21 @@
         box-shadow: 0 18px 34px rgba(66, 133, 244, 0.2);
       }
 
+      .thumb-lingolayer {
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, #f8fbff, #e8f0fe);
+      }
+
+      .thumb-lingolayer::before {
+        content: "";
+        width: 60px;
+        height: 60px;
+        border-radius: 14px;
+        background: url("https://lh3.googleusercontent.com/2I77TRYu3ZKrVrI0eNaXDhqvxZsbXDo8jRvWBubIxx8e8L2IzZwZttPEHlaIvQeZvJOG4oxrdA72qi0nfaVyOl4EQfg=s128-rj-sc0x00ffffff") center / contain no-repeat;
+        box-shadow: 0 18px 34px rgba(66, 133, 244, 0.2);
+      }
+
       .thumb-haiku {
         background:
           linear-gradient(rgba(7, 17, 31, 0.08), rgba(7, 17, 31, 0.08)),
@@ -1292,6 +1307,15 @@
                 <div class="project-body">
                   <span class="category chrome-extension">Chrome Extension</span>
                   <h3>WhatsApp Reply Pal</h3>
+                </div>
+              </a>
+            </article>
+            <article class="project-card" data-category="chrome-extension" data-title="LingoLayer" data-year="2026">
+              <a class="project-link" href="https://chromewebstore.google.com/detail/lingolayer/nnbmcomiclffbajkgkjgdjlfmjbedijg?utm_source=item-share-cb" target="_blank" rel="noreferrer">
+                <div class="project-visual thumb-lingolayer" aria-hidden="true"></div>
+                <div class="project-body">
+                  <span class="category chrome-extension">Chrome Extension</span>
+                  <h3>LingoLayer</h3>
                 </div>
               </a>
             </article>
@@ -1700,6 +1724,13 @@
           description: "A Chrome extension for drafting, reusing, and managing quick WhatsApp replies from the browser.",
           detail: "It is designed for repetitive messaging workflows where speed matters, but replies still need to stay consistent and easy to adjust.",
           href: "https://chromewebstore.google.com/detail/whatsapp-replypal/cmgbeceojeomlhcbljgepcjdjkoohgpe?authuser=0&hl=en-GB"
+        },
+        {
+          title: "LingoLayer",
+          visual: "thumb-lingolayer",
+          description: "A privacy-first Chrome extension that turns web pages into language-learning material locally in the browser.",
+          detail: "It is designed for learners who want reading practice, vocabulary support, and page-level context without sending browsing content to a remote service.",
+          href: "https://chromewebstore.google.com/detail/lingolayer/nnbmcomiclffbajkgkjgdjlfmjbedijg?utm_source=item-share-cb"
         },
         {
           title: "Haiku Mania",
