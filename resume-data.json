@@ -88,15 +88,93 @@
   "skills": [
     {
       "title": "Data Analysis",
-      "items": ["SQL", "Python", "Spatial and geographical data analysis", "Machine learning"]
+      "items": [
+        {
+          "name": "SQL",
+          "category": "analysis",
+          "description": "Used for product analysis, KPI tracking, and validation against source data."
+        },
+        {
+          "name": "Python",
+          "category": "engineering",
+          "description": "Used for analysis, automation, and data processing across product work."
+        },
+        {
+          "name": "Spatial and geographical data analysis",
+          "category": "analysis",
+          "description": "Finding patterns and behavior in location-aware datasets."
+        },
+        {
+          "name": "Machine learning",
+          "category": "product",
+          "description": "Evaluating model behavior and product-facing model signals."
+        }
+      ]
     },
     {
       "title": "BI Tools",
-      "items": ["Looker", "Tableau", "Looker Studio", "Streamlit", "Amplitude"]
+      "items": [
+        {
+          "name": "Looker",
+          "category": "visualization",
+          "description": "Building dashboards and reporting layers for stakeholders."
+        },
+        {
+          "name": "Tableau",
+          "category": "visualization",
+          "description": "Creating visual analysis and internal monitoring views."
+        },
+        {
+          "name": "Looker Studio",
+          "category": "visualization",
+          "description": "Fast reporting for shared business metrics and lightweight dashboards."
+        },
+        {
+          "name": "Streamlit",
+          "category": "engineering",
+          "description": "Rapid internal tools for analysis, evaluation, and operational workflows."
+        },
+        {
+          "name": "Amplitude",
+          "category": "product",
+          "description": "Event analysis and product usage measurement."
+        }
+      ]
     },
     {
       "title": "Data Infrastructure",
-      "items": ["PySpark", "BigQuery", "Athena", "Airflow", "Jenkins", "ETL"]
+      "items": [
+        {
+          "name": "PySpark",
+          "category": "engineering",
+          "description": "Processing large datasets in distributed analysis workflows."
+        },
+        {
+          "name": "BigQuery",
+          "category": "analysis",
+          "description": "Querying large-scale warehouse data for analysis and reporting."
+        },
+        {
+          "name": "Athena",
+          "category": "analysis",
+          "description": "Ad-hoc querying over structured data lakes and warehouse tables."
+        },
+        {
+          "name": "Airflow",
+          "category": "operations",
+          "description": "Scheduling and monitoring recurring data workflows."
+        },
+        {
+          "name": "Jenkins",
+          "category": "operations",
+          "description": "Supporting production pipeline automation and deployment routines."
+        },
+        {
+          "name": "ETL",
+          "category": "engineering",
+          "description": "Designing reliable extraction, transformation, and loading flows."
+        }
+      ]
     }
   ],
   "education": [

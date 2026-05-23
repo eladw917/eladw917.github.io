@@ -20,6 +20,7 @@
         --green: #22a663;
         --violet: #7c3ff2;
         --amber: #d79010;
+        --rose: #bf4b7d;
         --shadow: 0 18px 50px rgba(25, 39, 61, 0.12);
         --radius: 8px;
         font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -725,24 +726,125 @@
         letter-spacing: 0;
       }
 
-      .skill-pill-row {
+      .skill-item {
+        --skill-accent: var(--blue);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--surface);
+        overflow: hidden;
+      }
+
+      .skill-item[data-category="analysis"] {
+        --skill-accent: var(--blue);
+      }
+
+      .skill-item[data-category="engineering"] {
+        --skill-accent: var(--violet);
+      }
+
+      .skill-item[data-category="visualization"] {
+        --skill-accent: var(--green);
+      }
+
+      .skill-item[data-category="operations"] {
+        --skill-accent: var(--amber);
+      }
+
+      .skill-item[data-category="product"] {
+        --skill-accent: var(--rose);
+      }
+
+      .skill-item > summary {
+        list-style: none;
+        cursor: pointer;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 10px;
+        align-items: center;
+        padding: 12px 14px;
+      }
+
+      .skill-item > summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .skill-item > summary::after {
+        content: "+";
+        color: var(--skill-accent);
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 1;
+      }
+
+      .skill-item[open] > summary {
+        background: color-mix(in srgb, var(--skill-accent) 8%, var(--surface));
+      }
+
+      .skill-item[open] > summary::after {
+        content: "-";
+      }
+
+      .skill-item-summary {
         display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        min-width: 0;
       }
 
-      .skill-pill {
-        min-height: 30px;
-        padding: 5px 10px;
-        font-size: 13px;
+      .skill-item-name {
+        min-width: 0;
+        color: var(--ink);
+        font-size: 14px;
+        font-weight: 750;
+        line-height: 1.25;
       }
 
-      .skill-group-note {
-        min-height: 0;
+      .skill-item-category {
+        display: inline-flex;
+        align-items: center;
+        min-height: 24px;
+        padding: 3px 9px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .skill-item-body {
+        padding: 0 14px 12px;
+      }
+
+      .skill-item-description {
         margin: 0;
         color: var(--muted);
-        font-size: 12px;
+        font-size: 13px;
         line-height: 1.45;
+      }
+
+      .skill-category-analysis {
+        color: var(--blue);
+        background: color-mix(in srgb, var(--blue) 12%, var(--surface));
+      }
+
+      .skill-category-engineering {
+        color: var(--violet);
+        background: color-mix(in srgb, var(--violet) 12%, var(--surface));
+      }
+
+      .skill-category-visualization {
+        color: var(--green);
+        background: color-mix(in srgb, var(--green) 13%, var(--surface));
+      }
+
+      .skill-category-operations {
+        color: var(--amber);
+        background: color-mix(in srgb, var(--amber) 14%, var(--surface));
+      }
+
+      .skill-category-product {
+        color: var(--rose);
+        background: color-mix(in srgb, var(--rose) 12%, var(--surface));
       }
 
       .education-list {
@@ -1450,37 +1552,14 @@
       <section class="page-view" data-view="about" id="about" hidden>
         <section class="hero page-shell">
           <div class="hero-intro">
-            <p class="eyebrow">About</p>
-            <h1>Hey, I&apos;m Elad.</h1>
-            <p class="hero-copy">I work across product analytics, data science, and BI, helping teams turn messy product questions into clear event design, experiments, dashboards, and decisions. I enjoy building practical tools that reduce friction in real workflows, from analytics utilities to Chrome extensions and lightweight web apps.</p>
+            <p class="eyebrow" data-about-eyebrow></p>
+            <h1 data-about-title></h1>
+            <p class="hero-copy" data-about-copy></p>
           </div>
         </section>
 
         <section class="about-stack page-shell" aria-label="About details">
-          <div class="about-grid">
-            <article class="about-panel">
-              <h2>Professional Experience</h2>
-              <p>Product analytics, BI, experimentation, dashboarding, event taxonomy, funnel analysis, retention analysis, and stakeholder reporting.</p>
-            </article>
-
-            <article class="about-panel">
-              <h2>Skills and Tools</h2>
-              <p>SQL &middot; Python &middot; Product analytics &middot; Experiment design &middot; Event tracking &middot; BI dashboards &middot; Chrome extensions &middot; JavaScript / TypeScript</p>
-            </article>
-
-            <article class="about-panel">
-              <h2>Currently focused on</h2>
-              <ul class="about-focus">
-                <li>Building small tools for product and analytics workflows</li>
-                <li>Improving Chrome extensions and utility apps</li>
-                <li>Turning product questions into measurable systems</li>
-              </ul>
-            </article>
-
-            <article class="about-panel">
-              <h2>Education</h2>
-              <p>Y-data School of Data Science (now Nebius Academy) and The Hebrew University of Jerusalem, with a foundation in data science methods, analytics, business strategy, and regional studies.</p>
-            </article>
+          <div class="about-grid" data-about-grid>
           </div>
         </section>
 
@@ -1694,37 +1773,147 @@
       "skills": [
         {
           "title": "Data Analysis",
-          "items": ["SQL", "Python", "Spatial and geographical data analysis", "Machine learning"]
+          "items": [
+            {
+              "name": "SQL",
+              "category": "analysis",
+              "description": "Used for product analysis, KPI tracking, and validation against source data."
+            },
+            {
+              "name": "Python",
+              "category": "engineering",
+              "description": "Used for analysis, automation, and data processing across product work."
+            },
+            {
+              "name": "Spatial and geographical data analysis",
+              "category": "analysis",
+              "description": "Finding patterns and behavior in location-aware datasets."
+            },
+            {
+              "name": "Machine learning",
+              "category": "product",
+              "description": "Evaluating model behavior and product-facing model signals."
+            }
+          ]
         },
         {
           "title": "BI Tools",
-          "items": ["Looker", "Tableau", "Looker Studio", "Streamlit", "Amplitude"]
+          "items": [
+            {
+              "name": "Looker",
+              "category": "visualization",
+              "description": "Building dashboards and reporting layers for stakeholders."
+            },
+            {
+              "name": "Tableau",
+              "category": "visualization",
+              "description": "Creating visual analysis and internal monitoring views."
+            },
+            {
+              "name": "Looker Studio",
+              "category": "visualization",
+              "description": "Fast reporting for shared business metrics and lightweight dashboards."
+            },
+            {
+              "name": "Streamlit",
+              "category": "engineering",
+              "description": "Rapid internal tools for analysis, evaluation, and operational workflows."
+            },
+            {
+              "name": "Amplitude",
+              "category": "product",
+              "description": "Event analysis and product usage measurement."
+            }
+          ]
         },
         {
           "title": "Data Infrastructure",
-          "items": ["PySpark", "BigQuery", "Athena", "Airflow", "Jenkins", "ETL"]
+          "items": [
+            {
+              "name": "PySpark",
+              "category": "engineering",
+              "description": "Processing large datasets in distributed analysis workflows."
+            },
+            {
+              "name": "BigQuery",
+              "category": "analysis",
+              "description": "Querying large-scale warehouse data for analysis and reporting."
+            },
+            {
+              "name": "Athena",
+              "category": "analysis",
+              "description": "Ad-hoc querying over structured data lakes and warehouse tables."
+            },
+            {
+              "name": "Airflow",
+              "category": "operations",
+              "description": "Scheduling and monitoring recurring data workflows."
+            },
+            {
+              "name": "Jenkins",
+              "category": "operations",
+              "description": "Supporting production pipeline automation and deployment routines."
+            },
+            {
+              "name": "ETL",
+              "category": "engineering",
+              "description": "Designing reliable extraction, transformation, and loading flows."
+            }
+          ]
         }
       ],
-        "education": [
+      "education": [
+        {
+          "period": "2020 - 2021",
+          "institution": "Y-data School of Data Science (now Nebius Academy)",
+          "learned": "Data Science and Deep Learning"
+        },
+        {
+          "period": "2017 - 2019",
+          "institution": "The Hebrew University of Jerusalem",
+          "learned": "MBA in Big Data Analytics"
+        },
+        {
+          "period": "2015 - 2016",
+          "institution": "Nanjing University",
+          "learned": "Chinese language"
+        },
+        {
+          "period": "2012 - 2015",
+          "institution": "The Hebrew University of Jerusalem",
+          "learned": "BA in Economics and Asian Studies"
+        }
+      ]
+      }
+    </script>
+
+    <script type="application/json" id="about-data-fallback">
+      {
+        "hero": {
+          "eyebrow": "About",
+          "title": "Hey, I'm Elad.",
+          "copy": "I work across product analytics, data science, and BI, helping teams turn messy product questions into clear event design, experiments, dashboards, and decisions. I enjoy building practical tools that reduce friction in real workflows, from analytics utilities to Chrome extensions and lightweight web apps."
+        },
+        "panels": [
           {
-            "period": "2020 - 2021",
-            "institution": "Y-data School of Data Science (now Nebius Academy)",
-            "learned": "Data science methods and applied analytics"
+            "title": "Professional Experience",
+            "body": "Product analytics, BI, experimentation, dashboarding, event taxonomy, funnel analysis, retention analysis, and stakeholder reporting."
           },
           {
-            "period": "2017 - 2019",
-            "institution": "The Hebrew University of Jerusalem",
-            "learned": "Big data analytics and business strategy"
+            "title": "Skills and Tools",
+            "body": "SQL · Python · Product analytics · Experiment design · Event tracking · BI dashboards · Chrome extensions · JavaScript / TypeScript"
           },
           {
-            "period": "2015 - 2016",
-            "institution": "Nanjing University",
-            "learned": "Chinese language and cross-cultural communication"
+            "title": "Currently focused on",
+            "items": [
+              "Building small tools for product and analytics workflows",
+              "Improving Chrome extensions and utility apps",
+              "Turning product questions into measurable systems"
+            ]
           },
           {
-            "period": "2012 - 2015",
-            "institution": "The Hebrew University of Jerusalem",
-            "learned": "Asian studies and regional context"
+            "title": "Education",
+            "body": "Y-data School of Data Science (now Nebius Academy) and The Hebrew University of Jerusalem, with a foundation in data science methods, analytics, business strategy, and regional studies."
           }
         ]
       }
@@ -1917,6 +2106,12 @@
         }
       });
 
+      const aboutEyebrow = document.querySelector("[data-about-eyebrow]");
+      const aboutTitle = document.querySelector("[data-about-title]");
+      const aboutCopy = document.querySelector("[data-about-copy]");
+      const aboutGrid = document.querySelector("[data-about-grid]");
+      const aboutDataUrl = new URL("about-data.json", document.baseURI);
+      const aboutFallback = JSON.parse(document.getElementById("about-data-fallback").textContent);
       const resumeFeatured = document.querySelector(".resume-featured");
       const resumeTitle = document.querySelector("[data-resume-title]");
       const resumeRole = document.querySelector("[data-resume-role]");
@@ -1931,6 +2126,71 @@
       let resumeEntries = [];
       let resumeSkills = [];
       let resumeEducation = [];
+      let aboutData = null;
+
+      const skillCategoryLabels = {
+        analysis: "Analysis",
+        engineering: "Engineering",
+        visualization: "Visualization",
+        operations: "Operations",
+        product: "Product",
+      };
+
+      function formatCategoryLabel(category) {
+        return skillCategoryLabels[category] || category.replace(/-/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());
+      }
+
+      function renderAboutData(data) {
+        if (!data || !aboutEyebrow || !aboutTitle || !aboutCopy || !aboutGrid) {
+          return;
+        }
+
+        aboutEyebrow.textContent = data.hero?.eyebrow || "";
+        aboutTitle.textContent = data.hero?.title || "";
+        aboutCopy.textContent = data.hero?.copy || "";
+
+        aboutGrid.replaceChildren(...(data.panels || []).map((panel) => {
+          const article = document.createElement("article");
+          article.className = "about-panel";
+          const title = panel.title || "";
+          const heading = document.createElement("h2");
+          heading.textContent = title;
+          article.appendChild(heading);
+
+          if (Array.isArray(panel.items) && panel.items.length > 0) {
+            const list = document.createElement("ul");
+            list.className = "about-focus";
+            list.replaceChildren(...panel.items.map((itemText) => {
+              const li = document.createElement("li");
+              li.textContent = itemText;
+              return li;
+            }));
+            article.appendChild(list);
+            return article;
+          }
+
+          const body = document.createElement("p");
+          body.textContent = panel.body || "";
+          article.appendChild(body);
+          return article;
+        }));
+      }
+
+      async function loadAboutData() {
+        try {
+          const response = await fetch(aboutDataUrl, {cache: "no-store"});
+          if (!response.ok) {
+            throw new Error(`Failed to load about data: ${response.status}`);
+          }
+
+          aboutData = await response.json();
+        } catch (error) {
+          console.warn("Using embedded about fallback because about-data.json could not be loaded.", error);
+          aboutData = aboutFallback;
+        }
+
+        renderAboutData(aboutData);
+      }
 
       function renderResumeHero(entry) {
         if (!entry) {
@@ -1999,19 +2259,42 @@
         skillGrid.replaceChildren(...resumeSkills.map((skill) => {
           const group = document.createElement("section");
           group.className = "skill-group";
-          const items = skill.items || (skill.value || "").split(",").map((value) => value.trim()).filter(Boolean);
-          group.innerHTML = `
-            <h4 class="skill-group-category">${skill.title}</h4>
-            <div class="skill-pill-row" aria-label="${skill.title} skills"></div>
-          `;
+          const heading = document.createElement("h4");
+          heading.className = "skill-group-category";
+          heading.textContent = skill.title;
+          group.appendChild(heading);
 
-          const pillRow = group.querySelector(".skill-pill-row");
-          pillRow.replaceChildren(...items.map((itemText) => {
-            const pill = document.createElement("span");
-            pill.className = "tag skill-pill";
-            pill.textContent = itemText;
-            return pill;
-          }));
+          const items = Array.isArray(skill.items) ? skill.items : [];
+
+          items.forEach((item) => {
+            const skillItem = typeof item === "string" ? {
+              name: item,
+              category: "analysis",
+              description: "",
+            } : item;
+            const details = document.createElement("details");
+            const category = skillItem.category || "analysis";
+            details.className = `skill-item skill-item-${category}`;
+            details.dataset.category = category;
+            const summary = document.createElement("summary");
+            const name = document.createElement("span");
+            name.className = "skill-item-name";
+            name.textContent = skillItem.name || "";
+            const badge = document.createElement("span");
+            badge.className = `skill-item-category skill-category-${category}`;
+            badge.textContent = formatCategoryLabel(category);
+            summary.append(name, badge);
+
+            const body = document.createElement("div");
+            body.className = "skill-item-body";
+            const description = document.createElement("p");
+            description.className = "skill-item-description";
+            description.textContent = skillItem.description || "";
+            body.appendChild(description);
+
+            details.append(summary, body);
+            group.appendChild(details);
+          });
 
           return group;
         }));
@@ -2181,6 +2464,9 @@
       });
 
       syncView(getRequestedView(), {pushState: false});
+      loadAboutData().catch((error) => {
+        console.error(error);
+      });
       loadProjectData().catch((error) => {
         console.error(error);
       });
