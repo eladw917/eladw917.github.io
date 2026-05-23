@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Elad Weller's portfolio of product analytics, BI, practical workflow tools, Chrome extensions, and lightweight web apps.">
-    <title>Elad Weller - Projects</title>
+    <meta name="description" content="About Elad Weller, who works across product analytics, BI, and practical workflow tools.">
+    <title>Elad Weller - About</title>
     <style>
       :root {
         color-scheme: light;
@@ -1489,13 +1489,13 @@
   <body>
     <header class="site-header">
       <nav class="nav page-shell" aria-label="Main navigation">
-        <button class="brand" type="button" data-view-target="projects" aria-label="Elad Weller home">
+        <button class="brand" type="button" data-view-target="about" aria-label="Elad Weller home">
           <span class="brand-mark" aria-hidden="true"><span class="brand-initial">E</span></span>
           <span>ELAD WELLER</span>
         </button>
         <div class="nav-links">
-          <button class="nav-link" type="button" data-view-target="about">About</button>
-          <button class="nav-link active" type="button" data-view-target="projects" aria-current="page">Projects</button>
+          <button class="nav-link active" type="button" data-view-target="about" aria-current="page">About</button>
+          <button class="nav-link" type="button" data-view-target="projects">Projects</button>
           <button class="nav-link" type="button" data-view-target="resume">Resume</button>
           <button class="nav-link" type="button" data-open-contact-modal>Contact</button>
         </div>
@@ -1503,7 +1503,7 @@
     </header>
 
     <main>
-      <section class="page-view" data-view="projects">
+      <section class="page-view" data-view="projects" hidden>
         <section class="hero page-shell">
           <div class="hero-intro">
             <p class="eyebrow">Projects</p>
@@ -1543,7 +1543,7 @@
         </section>
       </section>
 
-      <section class="page-view" data-view="about" id="about" hidden>
+      <section class="page-view" data-view="about" id="about">
         <section class="hero page-shell">
           <div class="hero-intro">
             <p class="eyebrow" data-about-eyebrow></p>
@@ -1988,16 +1988,16 @@
         projects: "Projects by Elad Weller, featuring practical tools, browser extensions, and lightweight web apps.",
       };
       let lastTrigger = null;
-      let currentView = "projects";
+      let currentView = "about";
 
       function getRequestedView() {
-        if (window.location.hash === "#about") {
-          return "about";
+        if (window.location.hash === "#projects") {
+          return "projects";
         }
         if (window.location.hash === "#resume") {
           return "resume";
         }
-        return "projects";
+        return "about";
       }
 
       function syncView(view, {pushState = false} = {}) {
@@ -2023,7 +2023,7 @@
           description.content = descriptionByView[view];
         }
 
-        const nextUrl = view === "projects" ? window.location.pathname + window.location.search : `#${view}`;
+        const nextUrl = view === "about" ? window.location.pathname + window.location.search : `#${view}`;
         if (pushState) {
           history.pushState({view}, "", nextUrl);
         } else {
@@ -2035,7 +2035,7 @@
 
       if (viewBrand) {
         viewBrand.addEventListener("click", () => {
-          syncView("projects", {pushState: true});
+          syncView("about", {pushState: true});
         });
       }
 
