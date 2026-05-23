@@ -730,15 +730,21 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 12px;
+        align-items: start;
+        grid-auto-rows: 168px;
       }
 
       .skill-item {
         --skill-accent: var(--blue);
+        --skill-surface: color-mix(in srgb, var(--skill-accent) 10%, var(--surface));
+        --skill-surface-open: color-mix(in srgb, var(--skill-accent) 14%, var(--surface));
         border: 1px solid var(--line);
         border-radius: var(--radius);
-        background: var(--surface);
+        background: linear-gradient(180deg, var(--skill-surface) 0%, var(--surface) 100%);
         box-shadow: 0 12px 32px rgba(25, 39, 61, 0.07);
         overflow: hidden;
+        position: relative;
+        min-height: 168px;
       }
 
       .skill-item[data-category="analysis"] {
@@ -761,6 +767,14 @@
         --skill-accent: var(--rose);
       }
 
+      .skill-item::before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto;
+        height: 6px;
+        background: linear-gradient(90deg, var(--skill-accent), color-mix(in srgb, var(--skill-accent) 35%, white));
+      }
+
       .skill-item > summary {
         list-style: none;
         cursor: pointer;
@@ -769,7 +783,9 @@
         gap: 10px;
         align-items: center;
         min-height: 58px;
-        padding: 14px 14px 13px;
+        padding: 18px 14px 14px;
+        position: relative;
+        z-index: 1;
       }
 
       .skill-item > summary::-webkit-details-marker {
@@ -785,7 +801,7 @@
       }
 
       .skill-item[open] > summary {
-        background: color-mix(in srgb, var(--skill-accent) 8%, var(--surface));
+        background: var(--skill-surface-open);
       }
 
       .skill-item[open] > summary::after {
@@ -800,19 +816,16 @@
         line-height: 1.25;
       }
 
-      .skill-item-category {
-        display: inline-flex;
-        align-items: center;
-        min-height: 24px;
-        padding: 3px 9px;
-        border-radius: 999px;
-        font-size: 12px;
-        font-weight: 800;
-        white-space: nowrap;
-      }
-
       .skill-item-body {
-        padding: 0 14px 14px;
+        position: absolute;
+        inset: 72px 0 0;
+        padding: 10px 14px 14px;
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity 160ms ease, transform 160ms ease;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
       }
 
       .skill-item-description {
@@ -820,6 +833,11 @@
         color: var(--muted);
         font-size: 13px;
         line-height: 1.45;
+      }
+
+      .skill-item[open] .skill-item-body {
+        opacity: 1;
+        transform: translateY(0);
       }
 
       .skill-category-analysis {
@@ -2128,18 +2146,6 @@
       let resumeEducation = [];
       let aboutData = null;
 
-      const skillCategoryLabels = {
-        analysis: "Analysis",
-        engineering: "Engineering",
-        visualization: "Visualization",
-        operations: "Operations",
-        product: "Product",
-      };
-
-      function formatCategoryLabel(category) {
-        return skillCategoryLabels[category] || category.replace(/-/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());
-      }
-
       function renderAboutData(data) {
         if (!data || !aboutEyebrow || !aboutTitle || !aboutCopy || !aboutGrid) {
           return;
@@ -2282,10 +2288,7 @@
             const name = document.createElement("span");
             name.className = "skill-item-name";
             name.textContent = skillItem.name || "";
-            const badge = document.createElement("span");
-            badge.className = `skill-item-category skill-category-${category}`;
-            badge.textContent = formatCategoryLabel(category);
-            summary.append(name, badge);
+            summary.append(name);
 
             const body = document.createElement("div");
             body.className = "skill-item-body";
