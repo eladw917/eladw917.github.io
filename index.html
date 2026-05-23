@@ -726,11 +726,18 @@
         letter-spacing: 0;
       }
 
+      .skill-item-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 12px;
+      }
+
       .skill-item {
         --skill-accent: var(--blue);
         border: 1px solid var(--line);
         border-radius: var(--radius);
         background: var(--surface);
+        box-shadow: 0 12px 32px rgba(25, 39, 61, 0.07);
         overflow: hidden;
       }
 
@@ -761,7 +768,8 @@
         grid-template-columns: minmax(0, 1fr) auto;
         gap: 10px;
         align-items: center;
-        padding: 12px 14px;
+        min-height: 58px;
+        padding: 14px 14px 13px;
       }
 
       .skill-item > summary::-webkit-details-marker {
@@ -784,14 +792,6 @@
         content: "-";
       }
 
-      .skill-item-summary {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 14px;
-        min-width: 0;
-      }
-
       .skill-item-name {
         min-width: 0;
         color: var(--ink);
@@ -812,7 +812,7 @@
       }
 
       .skill-item-body {
-        padding: 0 14px 12px;
+        padding: 0 14px 14px;
       }
 
       .skill-item-description {
@@ -2264,6 +2264,8 @@
           heading.textContent = skill.title;
           group.appendChild(heading);
 
+          const itemGrid = document.createElement("div");
+          itemGrid.className = "skill-item-grid";
           const items = Array.isArray(skill.items) ? skill.items : [];
 
           items.forEach((item) => {
@@ -2293,8 +2295,10 @@
             body.appendChild(description);
 
             details.append(summary, body);
-            group.appendChild(details);
+            itemGrid.appendChild(details);
           });
+
+          group.appendChild(itemGrid);
 
           return group;
         }));
