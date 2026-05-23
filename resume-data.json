@@ -92,22 +92,26 @@
         {
           "name": "SQL",
           "category": "analysis",
-          "description": "Used for product analysis, KPI tracking, and validation against source data."
+          "level": "Advanced",
+          "usedFor": "Product analysis, KPI tracking, funnel work, A/B test analysis, and validating source data."
         },
         {
           "name": "Python",
           "category": "engineering",
-          "description": "Used for analysis, automation, and data processing across product work."
+          "level": "Advanced",
+          "usedFor": "Analysis automation, data processing, exploratory notebooks, and production-adjacent analytics workflows."
         },
         {
           "name": "Spatial and geographical data analysis",
           "category": "analysis",
-          "description": "Finding patterns and behavior in location-aware datasets."
+          "level": "Advanced",
+          "usedFor": "Location-aware data products, geographical segmentation, and behavior analysis over spatial datasets."
         },
         {
           "name": "Machine learning",
           "category": "product",
-          "description": "Evaluating model behavior and product-facing model signals."
+          "level": "Working knowledge",
+          "usedFor": "Model monitoring, feature evaluation, and product-facing model quality checks."
         }
       ]
     },
@@ -117,27 +121,32 @@
         {
           "name": "Looker",
           "category": "visualization",
-          "description": "Building dashboards and reporting layers for stakeholders."
+          "level": "Advanced",
+          "usedFor": "Management dashboards, product KPI reporting, and reusable metric layers."
         },
         {
           "name": "Tableau",
           "category": "visualization",
-          "description": "Creating visual analysis and internal monitoring views."
+          "level": "Advanced",
+          "usedFor": "Internal monitoring tools, customer-facing analysis, and exploratory visual reports."
         },
         {
           "name": "Looker Studio",
           "category": "visualization",
-          "description": "Fast reporting for shared business metrics and lightweight dashboards."
+          "level": "Intermediate",
+          "usedFor": "Lightweight reporting for shared metrics and fast stakeholder-facing dashboards."
         },
         {
           "name": "Streamlit",
           "category": "engineering",
-          "description": "Rapid internal tools for analysis, evaluation, and operational workflows."
+          "level": "Intermediate",
+          "usedFor": "Rapid internal tools for analysis, product evaluation, and operational workflows."
         },
         {
           "name": "Amplitude",
           "category": "product",
-          "description": "Event analysis and product usage measurement."
+          "level": "Advanced",
+          "usedFor": "Event analysis, funnel exploration, retention analysis, and product usage measurement."
         }
       ]
     },
@@ -147,32 +156,38 @@
         {
           "name": "PySpark",
           "category": "engineering",
-          "description": "Processing large datasets in distributed analysis workflows."
+          "level": "Intermediate",
+          "usedFor": "Distributed querying and processing for large datasets."
         },
         {
           "name": "BigQuery",
           "category": "analysis",
-          "description": "Querying large-scale warehouse data for analysis and reporting."
+          "level": "Advanced",
+          "usedFor": "Large-scale warehouse querying for analysis, reporting, and product investigations."
         },
         {
           "name": "Athena",
           "category": "analysis",
-          "description": "Ad-hoc querying over structured data lakes and warehouse tables."
+          "level": "Intermediate",
+          "usedFor": "Ad-hoc querying over structured data lakes and warehouse tables."
         },
         {
           "name": "Airflow",
           "category": "operations",
-          "description": "Scheduling and monitoring recurring data workflows."
+          "level": "Advanced",
+          "usedFor": "Scheduling, monitoring, and maintaining recurring data workflows."
         },
         {
           "name": "Jenkins",
           "category": "operations",
-          "description": "Supporting production pipeline automation and deployment routines."
+          "level": "Working knowledge",
+          "usedFor": "Supporting production pipeline automation and operational deployment routines."
         },
         {
           "name": "ETL",
           "category": "engineering",
-          "description": "Designing reliable extraction, transformation, and loading flows."
+          "level": "Advanced",
+          "usedFor": "Designing extraction, transformation, and loading flows for analytics and reporting."
         }
       ]
     }

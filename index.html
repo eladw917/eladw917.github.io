@@ -704,47 +704,26 @@
 
       .skill-grid {
         display: grid;
-        gap: 16px;
-      }
-
-      .skill-group {
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 10px;
-        padding: 0;
-        border: 0;
-        background: transparent;
-      }
-
-      .skill-group-category {
-        display: inline-flex;
-        align-items: center;
-        padding: 0;
-        color: var(--ink);
-        font-size: 15px;
-        font-weight: 800;
-        letter-spacing: 0;
-      }
-
-      .skill-item-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 12px;
-        align-items: start;
-        grid-auto-rows: 168px;
+        position: relative;
       }
 
       .skill-item {
         --skill-accent: var(--blue);
         --skill-surface: color-mix(in srgb, var(--skill-accent) 10%, var(--surface));
-        --skill-surface-open: color-mix(in srgb, var(--skill-accent) 14%, var(--surface));
-        border: 1px solid var(--line);
+        width: 100%;
+        min-height: 38px;
+        border: 1px dashed color-mix(in srgb, var(--skill-accent) 48%, var(--line));
         border-radius: var(--radius);
-        background: linear-gradient(180deg, var(--skill-surface) 0%, var(--surface) 100%);
-        box-shadow: 0 12px 32px rgba(25, 39, 61, 0.07);
-        overflow: hidden;
-        position: relative;
-        min-height: 168px;
+        background: var(--skill-surface);
+        color: var(--ink);
+        padding: 8px 10px;
+        text-align: left;
+        font-size: 13px;
+        font-weight: 750;
+        line-height: 1.2;
+        box-shadow: 0 8px 20px rgba(25, 39, 61, 0.05);
       }
 
       .skill-item[data-category="analysis"] {
@@ -767,77 +746,74 @@
         --skill-accent: var(--rose);
       }
 
-      .skill-item::before {
-        content: "";
-        position: absolute;
-        inset: 0 0 auto;
-        height: 6px;
-        background: linear-gradient(90deg, var(--skill-accent), color-mix(in srgb, var(--skill-accent) 35%, white));
-      }
-
-      .skill-item > summary {
-        list-style: none;
+      .skill-item[data-clickable="true"] {
+        border-style: solid;
+        border-color: color-mix(in srgb, var(--skill-accent) 72%, var(--line));
         cursor: pointer;
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
-        gap: 10px;
-        align-items: center;
-        min-height: 58px;
-        padding: 18px 14px 14px;
-        position: relative;
-        z-index: 1;
+        transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
       }
 
-      .skill-item > summary::-webkit-details-marker {
-        display: none;
+      .skill-item[data-clickable="true"]:hover,
+      .skill-item[data-active="true"] {
+        transform: translateY(-2px);
+        border-color: var(--skill-accent);
+        box-shadow: 0 12px 28px color-mix(in srgb, var(--skill-accent) 18%, transparent);
       }
 
-      .skill-item > summary::after {
-        content: "+";
-        color: var(--skill-accent);
-        font-size: 16px;
-        font-weight: 800;
-        line-height: 1;
-      }
-
-      .skill-item[open] > summary {
-        background: var(--skill-surface-open);
-      }
-
-      .skill-item[open] > summary::after {
-        content: "-";
+      .skill-item:disabled {
+        cursor: default;
+        color: color-mix(in srgb, var(--ink) 70%, var(--muted));
       }
 
       .skill-item-name {
-        min-width: 0;
-        color: var(--ink);
-        font-size: 14px;
-        font-weight: 750;
-        line-height: 1.25;
-      }
-
-      .skill-item-body {
-        position: absolute;
-        inset: 72px 0 0;
-        padding: 10px 14px 14px;
-        opacity: 0;
-        transform: translateY(8px);
-        transition: opacity 160ms ease, transform 160ms ease;
-        pointer-events: none;
-        z-index: 0;
+        display: block;
         overflow: hidden;
+        text-overflow: ellipsis;
       }
 
-      .skill-item-description {
+      .skill-popover {
+        --skill-accent: var(--blue);
+        position: absolute;
+        left: var(--skill-popover-left, 0px);
+        top: var(--skill-popover-top, 0px);
+        width: min(320px, 100%);
+        z-index: 5;
+        border: 1px solid color-mix(in srgb, var(--skill-accent) 70%, var(--line));
+        border-radius: var(--radius);
+        background: var(--surface);
+        box-shadow: 0 18px 42px rgba(25, 39, 61, 0.18);
+        padding: 14px;
+      }
+
+      .skill-popover[hidden] {
+        display: none;
+      }
+
+      .skill-popover-title {
         margin: 0;
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.2;
+      }
+
+      .skill-popover-level {
+        display: inline-flex;
+        align-items: center;
+        min-height: 24px;
+        margin-top: 10px;
+        padding: 3px 9px;
+        border-radius: 999px;
+        background: color-mix(in srgb, var(--skill-accent) 12%, var(--surface));
+        color: var(--skill-accent);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .skill-popover-used-for {
+        margin: 10px 0 0;
         color: var(--muted);
         font-size: 13px;
         line-height: 1.45;
-      }
-
-      .skill-item[open] .skill-item-body {
-        opacity: 1;
-        transform: translateY(0);
       }
 
       .skill-category-analysis {
@@ -1795,22 +1771,26 @@
             {
               "name": "SQL",
               "category": "analysis",
-              "description": "Used for product analysis, KPI tracking, and validation against source data."
+              "level": "Advanced",
+              "usedFor": "Product analysis, KPI tracking, funnel work, A/B test analysis, and validating source data."
             },
             {
               "name": "Python",
               "category": "engineering",
-              "description": "Used for analysis, automation, and data processing across product work."
+              "level": "Advanced",
+              "usedFor": "Analysis automation, data processing, exploratory notebooks, and production-adjacent analytics workflows."
             },
             {
               "name": "Spatial and geographical data analysis",
               "category": "analysis",
-              "description": "Finding patterns and behavior in location-aware datasets."
+              "level": "Advanced",
+              "usedFor": "Location-aware data products, geographical segmentation, and behavior analysis over spatial datasets."
             },
             {
               "name": "Machine learning",
               "category": "product",
-              "description": "Evaluating model behavior and product-facing model signals."
+              "level": "Working knowledge",
+              "usedFor": "Model monitoring, feature evaluation, and product-facing model quality checks."
             }
           ]
         },
@@ -1820,27 +1800,32 @@
             {
               "name": "Looker",
               "category": "visualization",
-              "description": "Building dashboards and reporting layers for stakeholders."
+              "level": "Advanced",
+              "usedFor": "Management dashboards, product KPI reporting, and reusable metric layers."
             },
             {
               "name": "Tableau",
               "category": "visualization",
-              "description": "Creating visual analysis and internal monitoring views."
+              "level": "Advanced",
+              "usedFor": "Internal monitoring tools, customer-facing analysis, and exploratory visual reports."
             },
             {
               "name": "Looker Studio",
               "category": "visualization",
-              "description": "Fast reporting for shared business metrics and lightweight dashboards."
+              "level": "Intermediate",
+              "usedFor": "Lightweight reporting for shared metrics and fast stakeholder-facing dashboards."
             },
             {
               "name": "Streamlit",
               "category": "engineering",
-              "description": "Rapid internal tools for analysis, evaluation, and operational workflows."
+              "level": "Intermediate",
+              "usedFor": "Rapid internal tools for analysis, product evaluation, and operational workflows."
             },
             {
               "name": "Amplitude",
               "category": "product",
-              "description": "Event analysis and product usage measurement."
+              "level": "Advanced",
+              "usedFor": "Event analysis, funnel exploration, retention analysis, and product usage measurement."
             }
           ]
         },
@@ -1850,32 +1835,38 @@
             {
               "name": "PySpark",
               "category": "engineering",
-              "description": "Processing large datasets in distributed analysis workflows."
+              "level": "Intermediate",
+              "usedFor": "Distributed querying and processing for large datasets."
             },
             {
               "name": "BigQuery",
               "category": "analysis",
-              "description": "Querying large-scale warehouse data for analysis and reporting."
+              "level": "Advanced",
+              "usedFor": "Large-scale warehouse querying for analysis, reporting, and product investigations."
             },
             {
               "name": "Athena",
               "category": "analysis",
-              "description": "Ad-hoc querying over structured data lakes and warehouse tables."
+              "level": "Intermediate",
+              "usedFor": "Ad-hoc querying over structured data lakes and warehouse tables."
             },
             {
               "name": "Airflow",
               "category": "operations",
-              "description": "Scheduling and monitoring recurring data workflows."
+              "level": "Advanced",
+              "usedFor": "Scheduling, monitoring, and maintaining recurring data workflows."
             },
             {
               "name": "Jenkins",
               "category": "operations",
-              "description": "Supporting production pipeline automation and deployment routines."
+              "level": "Working knowledge",
+              "usedFor": "Supporting production pipeline automation and operational deployment routines."
             },
             {
               "name": "ETL",
               "category": "engineering",
-              "description": "Designing reliable extraction, transformation, and loading flows."
+              "level": "Advanced",
+              "usedFor": "Designing extraction, transformation, and loading flows for analytics and reporting."
             }
           ]
         }
@@ -2261,50 +2252,78 @@
 
       function renderResumeSkills() {
         const skillGrid = document.getElementById("resume-skills");
+        const allSkills = resumeSkills
+          .flatMap((group) => (Array.isArray(group.items) ? group.items : []))
+          .map((item) => typeof item === "string" ? {
+            name: item,
+            category: "analysis",
+          } : item)
+          .sort((a, b) => (a.name || "").localeCompare(b.name || "", undefined, {sensitivity: "base"}));
 
-        skillGrid.replaceChildren(...resumeSkills.map((skill) => {
-          const group = document.createElement("section");
-          group.className = "skill-group";
-          const heading = document.createElement("h4");
-          heading.className = "skill-group-category";
-          heading.textContent = skill.title;
-          group.appendChild(heading);
+        const popover = document.createElement("div");
+        popover.className = "skill-popover";
+        popover.hidden = true;
+        popover.innerHTML = `
+          <h4 class="skill-popover-title"></h4>
+          <span class="skill-popover-level"></span>
+          <p class="skill-popover-used-for"></p>
+        `;
 
-          const itemGrid = document.createElement("div");
-          itemGrid.className = "skill-item-grid";
-          const items = Array.isArray(skill.items) ? skill.items : [];
-
-          items.forEach((item) => {
-            const skillItem = typeof item === "string" ? {
-              name: item,
-              category: "analysis",
-              description: "",
-            } : item;
-            const details = document.createElement("details");
-            const category = skillItem.category || "analysis";
-            details.className = `skill-item skill-item-${category}`;
-            details.dataset.category = category;
-            const summary = document.createElement("summary");
-            const name = document.createElement("span");
-            name.className = "skill-item-name";
-            name.textContent = skillItem.name || "";
-            summary.append(name);
-
-            const body = document.createElement("div");
-            body.className = "skill-item-body";
-            const description = document.createElement("p");
-            description.className = "skill-item-description";
-            description.textContent = skillItem.description || "";
-            body.appendChild(description);
-
-            details.append(summary, body);
-            itemGrid.appendChild(details);
+        function closeSkillPopover() {
+          popover.hidden = true;
+          Array.from(skillGrid.querySelectorAll(".skill-item")).forEach((button) => {
+            button.dataset.active = "false";
           });
+        }
 
-          group.appendChild(itemGrid);
+        const skillButtons = allSkills.map((skillItem) => {
+          const button = document.createElement("button");
+          const category = skillItem.category || "analysis";
+          const hasDetails = Boolean(skillItem.level || skillItem.usedFor || skillItem.description);
+          button.type = "button";
+          button.className = "skill-item";
+          button.dataset.category = category;
+          button.dataset.clickable = hasDetails ? "true" : "false";
+          button.dataset.active = "false";
+          button.disabled = !hasDetails;
+          button.innerHTML = `<span class="skill-item-name"></span>`;
+          button.querySelector(".skill-item-name").textContent = skillItem.name || "";
 
-          return group;
-        }));
+          if (hasDetails) {
+            button.addEventListener("click", (event) => {
+              event.stopPropagation();
+              const isActive = button.dataset.active === "true";
+              closeSkillPopover();
+
+              if (isActive) {
+                return;
+              }
+
+              const gridRect = skillGrid.getBoundingClientRect();
+              const buttonRect = button.getBoundingClientRect();
+              const popoverWidth = Math.min(320, gridRect.width);
+              const left = Math.min(
+                Math.max(buttonRect.left - gridRect.left, 0),
+                Math.max(gridRect.width - popoverWidth, 0)
+              );
+              const top = buttonRect.bottom - gridRect.top + 8;
+
+              popover.style.setProperty("--skill-accent", `var(--${category === "analysis" ? "blue" : category === "engineering" ? "violet" : category === "visualization" ? "green" : category === "operations" ? "amber" : "rose"})`);
+              popover.style.setProperty("--skill-popover-left", `${left}px`);
+              popover.style.setProperty("--skill-popover-top", `${top}px`);
+              popover.querySelector(".skill-popover-title").textContent = skillItem.name || "";
+              popover.querySelector(".skill-popover-level").textContent = skillItem.level || "Working knowledge";
+              popover.querySelector(".skill-popover-used-for").textContent = skillItem.usedFor || skillItem.description || "";
+              popover.hidden = false;
+              button.dataset.active = "true";
+            });
+          }
+
+          return button;
+        });
+
+        skillGrid.replaceChildren(...skillButtons, popover);
+        document.addEventListener("click", closeSkillPopover);
       }
 
       function renderResumeEducation() {
